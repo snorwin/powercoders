@@ -77,6 +77,7 @@ spec:
     ```shell script
     oc logs <pod name>
     ```
+4. Also check the [1.2 - Inspect a Pod](#12---inspect-a-pod) section for the WebConsole.
 
 ### 1.3 - Delete a Pod
 1. You won't need the `Pod` in the following exercises, therefore clean up your project.
