@@ -418,8 +418,7 @@ spec:
 <h3 id="11-create-a-pod_1">1.1 - Create a Pod</h3>
 <ol>
 <li>At the beginning of the exercise make sure that you are in your project context. 
-    <code>shell script
-    oc project &lt;project name&gt;</code>
+    <code>oc project &lt;project name&gt;</code>
    (replace <code>&lt;projet name&gt;</code> with the actual name of your own project)</li>
 <li>
 <p>Create a <code>Pod</code> definition file called <code>pod.yaml</code> using the <code>vi</code> editor with the following content:
@@ -441,8 +440,7 @@ spec:
 </li>
 <li>
 <p>Create a pod by using the <code>oc apply</code> command.
-    <code>shell script
-    oc apply -f pod.yaml</code>
+    <code>oc apply -f pod.yaml</code>
    The output of the command should look this:
    <code>[~] $ oc apply -f pod.yaml
    pod/httpd created</code></p>
@@ -451,27 +449,22 @@ spec:
 <h3 id="12-inspect-a-pod_1">1.2 - Inspect a Pod</h3>
 <ol>
 <li>Let's verify the state of the <code>Pod</code> that you have created using <code>oc get</code>.
-    <code>shell script
-    oc get pods</code>
+    <code>oc get pods</code>
     You can choose the output format <code>&lt;output format&gt;</code> with the <code>-o</code> flag. 
     Try some of the formats: <code>wide</code>, <code>json</code>, <code>yaml</code>
-    <code>shell script
-    oc get pods -o &lt;output format&gt;</code></li>
+    <code>oc get pods -o &lt;output format&gt;</code></li>
 <li><code>oc describe</code> can be used to get detailed description of a given resource. 
     Inspect the information and events of your pod <code>Pod</code>.
-    <code>shell script
-    oc descirbe pod &lt;pod name&gt;</code></li>
+    <code>oc descirbe pod &lt;pod name&gt;</code></li>
 <li>Print the logs for a container in a pod using the <code>oc log</code> command
     in order to check if the application in the <code>Pod</code> was started successfully.
-    <code>shell script
-    oc logs &lt;pod name&gt;</code></li>
+    <code>oc logs &lt;pod name&gt;</code></li>
 <li>Also check the <a href="#12---inspect-a-pod">1.2 - Inspect a Pod</a> section for the WebConsole.</li>
 </ol>
 <h3 id="13-delete-a-pod_1">1.3 - Delete a Pod</h3>
 <ol>
 <li>You won't need the <code>Pod</code> in the following exercises, therefore clean up your project.
-    <code>shell script
-    oc delete pod &lt;pod name&gt;</code></li>
+    <code>oc delete pod &lt;pod name&gt;</code></li>
 </ol>
                 
               
