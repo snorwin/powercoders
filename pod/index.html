@@ -13,7 +13,7 @@
     
     
       
-        <title>Ex 1 - Pods - Powercoders - Introduction to Cloud Computing</title>
+        <title>Exercise 1 - Pods - Powercoders - Introduction to Cloud Computing</title>
       
     
     
@@ -86,7 +86,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Ex 1 - Pods
+              Exercise 1 - Pods
             
           </span>
         </div>
@@ -181,12 +181,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Ex 1 - Pods
+        Exercise 1 - Pods
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Ex 1 - Pods
+      Exercise 1 - Pods
     </a>
     
       
@@ -284,7 +284,7 @@
 
   <li class="md-nav__item">
     <a href="../deployment/" class="md-nav__link">
-      Ex 2 - Deplyments
+      Exercise 2 - Deplyments
     </a>
   </li>
 
@@ -402,69 +402,74 @@ deploy a <code>Pod</code> that runs a single container with the image <code>rhsc
 Interface (CLI)' section in oder to complete the exercise.</em></p>
 <h2 id="web-console">Web Console</h2>
 <h3 id="11-create-a-pod">1.1 - Create a Pod</h3>
-<pre><code class="language-yaml">apiVersion: v1
-kind: Pod
-metadata:
-  labels:
-    app: httpd
-spec:
-  containers:
-  - name: httpd-24
-    image: rhscl/httpd-24-rhel7:latest
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">labels</span><span class="p">:</span>
+    <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd-24</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rhscl/httpd-24-rhel7:latest</span>
+</code></pre></div>
 <h3 id="12-inspect-a-pod">1.2 - Inspect a Pod</h3>
 <h3 id="13-delete-a-pod">1.3 - Delete a Pod</h3>
 <h2 id="command-line-interface-cli">Command Line Interface (CLI)</h2>
 <h3 id="11-create-a-pod_1">1.1 - Create a Pod</h3>
 <ol>
 <li>At the beginning of the exercise make sure that you are in your project context. 
-    <code>oc project &lt;project name&gt;</code>
+    <div class="highlight"><pre><span></span><code>oc project &lt;project name&gt; 
+</code></pre></div>
    (replace <code>&lt;projet name&gt;</code> with the actual name of your own project)</li>
 <li>
 <p>Create a <code>Pod</code> definition file called <code>pod.yaml</code> using the <code>vi</code> editor with the following content:
-    ```yaml
-    apiVersion: v1
-    kind: Pod
-    metadata:
-      labels:
-        app: httpd
-    spec:
-      containers:</p>
-<ul>
-<li>name: httpd-24
-    image: rhscl/httpd-24-rhel7:latest
-<code>``
-   _More detailed information about the</code>Pod` definition file  can be found in the
-   <a href="https://docs.openshift.com/container-platform/4.5/nodes/pods/nodes-pods-using.html#nodes-pods-using-example_nodes-pods-using-ssy">OpenShift Documentation</a>_</li>
-</ul>
+    <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">labels</span><span class="p">:</span>
+    <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd-24</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rhscl/httpd-24-rhel7:latest</span>
+</code></pre></div>
+   <em>More detailed information about the <code>Pod</code> definition file  can be found in the
+   <a href="https://docs.openshift.com/container-platform/4.5/nodes/pods/nodes-pods-using.html#nodes-pods-using-example_nodes-pods-using-ssy">OpenShift Documentation</a></em></p>
 </li>
 <li>
 <p>Create a pod by using the <code>oc apply</code> command.
-    <code>oc apply -f pod.yaml</code>
+    <div class="highlight"><pre><span></span><code>oc apply -f pod.yaml
+</code></pre></div>
     The output of the command should look this:
-    <code>[~] $ oc apply -f pod.yaml
-    pod/httpd created</code></p>
+    <div class="highlight"><pre><span></span><code>[~] $ oc apply -f pod.yaml
+pod/httpd created
+</code></pre></div></p>
 </li>
 </ol>
 <h3 id="12-inspect-a-pod_1">1.2 - Inspect a Pod</h3>
 <ol>
 <li>Let's verify the state of the <code>Pod</code> that you have created using <code>oc get</code>.
-    <code>oc get pods</code>
+    <div class="highlight"><pre><span></span><code>oc get pods 
+</code></pre></div>
     You can choose the output format <code>&lt;output format&gt;</code> with the <code>-o</code> flag. 
     Try some of the formats: <code>wide</code>, <code>json</code>, <code>yaml</code>
-    <code>oc get pods -o &lt;output format&gt;</code></li>
+    <div class="highlight"><pre><span></span><code>oc get pods -o &lt;output format&gt;
+</code></pre></div></li>
 <li><code>oc describe</code> can be used to get detailed description of a given resource. 
     Inspect the information and events of your pod <code>Pod</code>.
-    <code>oc descirbe pod &lt;pod name&gt;</code></li>
+    <div class="highlight"><pre><span></span><code>oc descirbe pod &lt;pod name&gt;
+</code></pre></div></li>
 <li>Print the logs for a container in a pod using the <code>oc log</code> command
     in order to check if the application in the <code>Pod</code> was started successfully.
-    <code>oc logs &lt;pod name&gt;</code></li>
+    <div class="highlight"><pre><span></span><code>oc logs &lt;pod name&gt;
+</code></pre></div></li>
 <li>Also check the <a href="#12---inspect-a-pod">1.2 - Inspect a Pod</a> section for the WebConsole.</li>
 </ol>
 <h3 id="13-delete-a-pod_1">1.3 - Delete a Pod</h3>
 <ol>
 <li>You won't need the <code>Pod</code> in the following exercises, therefore clean up your project.
-    <code>oc delete pod &lt;pod name&gt;</code></li>
+    <div class="highlight"><pre><span></span><code>oc delete pod &lt;pod name&gt;
+</code></pre></div></li>
 </ol>
                 
               
@@ -505,7 +510,7 @@ spec:
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Ex 2 - Deplyments
+                Exercise 2 - Deplyments
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
