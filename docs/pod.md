@@ -51,10 +51,10 @@ spec:
     ```
     oc apply -f pod.yaml
     ```
-   The output of the command should look this:
-   ```
-   [~] $ oc apply -f pod.yaml
-   pod/httpd created
+    The output of the command should look this:
+    ```
+    [~] $ oc apply -f pod.yaml
+    pod/httpd created
     ```
 
 ### 1.2 - Inspect a Pod
