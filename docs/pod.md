@@ -28,22 +28,22 @@ spec:
 ## Command Line Interface (CLI)
 ### 1.1 - Create a Pod
 1. At the beginning of the exercise make sure that you are in your project context. 
-```
-oc project <project name> 
-```
+    ```
+    oc project <project name> 
+    ```
    (replace `<projet name>` with the actual name of your own project)
 2. Create a `Pod` definition file called `pod.yaml` using the `vi` editor with the following content:
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  labels:
-    app: httpd
-spec:
-  containers:
-  - name: httpd-24
-    image: rhscl/httpd-24-rhel7:latest
-```
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      labels:
+        app: httpd
+    spec:
+      containers:
+      - name: httpd-24
+        image: rhscl/httpd-24-rhel7:latest
+    ```
    _More detailed information about the `Pod` definition file  can be found in the
    [OpenShift Documentation](https://docs.openshift.com/container-platform/4.5/nodes/pods/nodes-pods-using.html#nodes-pods-using-example_nodes-pods-using-ssy)_
    
