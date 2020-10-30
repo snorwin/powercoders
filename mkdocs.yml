@@ -12,3 +12,5 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.superfences
   - pymdownx.tabbed
+  - toc:
+      toc_depth: 2

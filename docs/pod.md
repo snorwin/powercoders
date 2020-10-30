@@ -1,4 +1,4 @@
-# 1 - Pods
+# Exercise 1 - Pods
 The goal of this exercise is to run our first application, an Apache HTTP Server, in OpenShift.
 For this we use a `Pod` which is the smallest deployable unit of computing that you can create 
 and manage in OpenShift. A `Pod` is a group of one or more containers. In this exercise, we will
@@ -8,7 +8,8 @@ _**Note** For each exercise you can choose and only have to do either the 'Web C
 Interface (CLI)' section in oder to complete the exercise._
 
 === "Web Console"
-    ### 1.1 - Create a Pod
+    ### Create a Pod
+    TODO
     ```yaml
     apiVersion: v1
     kind: Pod
@@ -21,11 +22,14 @@ Interface (CLI)' section in oder to complete the exercise._
         image: rhscl/httpd-24-rhel7:latest
     ```
     
-    ### 1.2 - Inspect a Pod
-    ### 1.3 - Delete a Pod
+    ### Inspect a Pod
+    TODO
+    
+    ### Delete a Pod
+    TODO
 
 === "Command Line Interface (CLI)"
-    ### 1.1 - Create a Pod
+    ### Create a Pod
     1. At the beginning of the exercise make sure that you are in your project context. 
         ```
         oc project <project name> 
@@ -56,7 +60,7 @@ Interface (CLI)' section in oder to complete the exercise._
         pod/httpd created
         ```
     
-    ### 1.2 - Inspect a Pod
+    ### Inspect a Pod
     1. Let's verify the state of the `Pod` that you have created using `oc get`.
         ```
         oc get pods 
@@ -78,7 +82,7 @@ Interface (CLI)' section in oder to complete the exercise._
         ```
     4. Also check the [1.2 - Inspect a Pod](#12---inspect-a-pod) section for the WebConsole.
     
-    ### 1.3 - Delete a Pod
+    ### Delete a Pod
     1. You won't need the `Pod` in the following exercises, therefore clean up your project.
         ```
         oc delete pod <pod name>
