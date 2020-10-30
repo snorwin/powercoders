@@ -1,3 +1,7 @@
 site_name: Powercoders - Introduction to Cloud Computing
 theme:
   name: material
+nav:
+  - Introduction: index.md
+  - Ex 1 - Pods: pod.md
+  - Ex 2 - Deplyments: deployment.md
