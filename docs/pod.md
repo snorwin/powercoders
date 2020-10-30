@@ -28,7 +28,7 @@ spec:
 ## Command Line Interface (CLI)
 ### 1.1 - Create a Pod
 1. At the beginning of the exercise make sure that you are in your project context. 
-    ```shell script
+    ```
     oc project <project name> 
     ```
    (replace `<projet name>` with the actual name of your own project)
@@ -48,7 +48,7 @@ spec:
    [OpenShift Documentation](https://docs.openshift.com/container-platform/4.5/nodes/pods/nodes-pods-using.html#nodes-pods-using-example_nodes-pods-using-ssy)_
    
 3. Create a pod by using the `oc apply` command.
-    ```shell script
+    ```
     oc apply -f pod.yaml
     ```
    The output of the command should look this:
@@ -59,28 +59,28 @@ spec:
 
 ### 1.2 - Inspect a Pod
 1. Let's verify the state of the `Pod` that you have created using `oc get`.
-    ```shell script
+    ```
     oc get pods 
     ```
     You can choose the output format `<output format>` with the `-o` flag. 
     Try some of the formats: `wide`, `json`, `yaml`
-    ```shell script
+    ```
     oc get pods -o <output format>
     ```
 2. `oc describe` can be used to get detailed description of a given resource. 
     Inspect the information and events of your pod `Pod`.
-    ```shell script
+    ```
     oc descirbe pod <pod name>
     ```
 3.  Print the logs for a container in a pod using the `oc log` command
     in order to check if the application in the `Pod` was started successfully.
-    ```shell script
+    ```
     oc logs <pod name>
     ```
 4. Also check the [1.2 - Inspect a Pod](#12---inspect-a-pod) section for the WebConsole.
 
 ### 1.3 - Delete a Pod
 1. You won't need the `Pod` in the following exercises, therefore clean up your project.
-    ```shell script
+    ```
     oc delete pod <pod name>
     ```
