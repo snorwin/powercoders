@@ -226,52 +226,12 @@
     Command Line Interface (CLI)
   </a>
   
-    <nav class="md-nav" aria-label="Command Line Interface (CLI)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-create-a-deployment" class="md-nav__link">
-    2.1 - Create a Deployment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-inspect-a-deployment" class="md-nav__link">
-    2.2 - Inspect a Deployment
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
   <a href="#delete-a-pod" class="md-nav__link">
     Delete a Pod
   </a>
-  
-    <nav class="md-nav" aria-label="Delete a Pod">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#web-console_1" class="md-nav__link">
-    Web Console
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#command-line-interface-cli_1" class="md-nav__link">
-    Command Line Interface (CLI)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -317,52 +277,12 @@
     Command Line Interface (CLI)
   </a>
   
-    <nav class="md-nav" aria-label="Command Line Interface (CLI)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-create-a-deployment" class="md-nav__link">
-    2.1 - Create a Deployment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-inspect-a-deployment" class="md-nav__link">
-    2.2 - Inspect a Deployment
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
   <a href="#delete-a-pod" class="md-nav__link">
     Delete a Pod
   </a>
-  
-    <nav class="md-nav" aria-label="Delete a Pod">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#web-console_1" class="md-nav__link">
-    Web Console
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#command-line-interface-cli_1" class="md-nav__link">
-    Command Line Interface (CLI)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -382,7 +302,7 @@
                 <h1 id="2-deployment">2 - Deployment</h1>
 <h2 id="web-console">Web Console</h2>
 <h2 id="command-line-interface-cli">Command Line Interface (CLI)</h2>
-<h3 id="21-create-a-deployment">2.1 - Create a Deployment</h3>
+<h3>2.1 - Create a Deployment</h3>
 <ol>
 <li>At the beginning of the exercise make sure that you are in your project context. 
     <code>shell script
@@ -395,7 +315,7 @@
    <code>[~] $ oc create deployment httpd --image rhscl/httpd-24-rhel7:latest
    deployment.apps/httpd created</code></li>
 </ol>
-<h3 id="22-inspect-a-deployment">2.2 - Inspect a Deployment</h3>
+<h3>2.2 - Inspect a Deployment</h3>
 <ol>
 <li><code>shell script
    oc get deployments -o wide
@@ -407,8 +327,8 @@ oc get pods
 oc get pods -o wide
 </code></pre></div></p>
 <h2 id="delete-a-pod">Delete a Pod</h2>
-<h3 id="web-console_1">Web Console</h3>
-<h3 id="command-line-interface-cli_1">Command Line Interface (CLI)</h3>
+<h3>Web Console</h3>
+<h3>Command Line Interface (CLI)</h3>
 <p><code>shell script
 oc delete pod &lt;pod name&gt;</code></p>
                 
