@@ -9,7 +9,7 @@
     oc project <project name> 
     ```
    (replace `<projet name>` with the actual name of your own project)
-2. Create a deployment of the using the `oc create` command:
+2. Create a deployment of the Apache HTTP Server using the `oc create` command:
     ```shell script
     oc create deployment httpd --image rhscl/httpd-24-rhel7:latest
     ```
