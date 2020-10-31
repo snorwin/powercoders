@@ -8,7 +8,7 @@
       
       
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../img/favicon-32x32.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
     
     
@@ -21,6 +21,10 @@
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
         
       
     
@@ -47,7 +51,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="indigo">
       
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -71,8 +75,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href=".." title="Powercoders - Introduction to Cloud Computing" class="md-header-nav__button md-logo" aria-label="Powercoders - Introduction to Cloud Computing">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../img/cloud3.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -145,8 +148,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Powercoders - Introduction to Cloud Computing" class="md-nav__button md-logo" aria-label="Powercoders - Introduction to Cloud Computing">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../img/cloud3.png" alt="logo">
 
     </a>
     Powercoders - Introduction to Cloud Computing
@@ -194,7 +196,7 @@
 
   <li class="md-nav__item">
     <a href="../deployment/" class="md-nav__link">
-      Exercise 2 - Deplyments
+      Exercise 2 - Deplyoments
     </a>
   </li>
 
@@ -227,13 +229,16 @@
               
                 
                 
-                <h1 id="exercise-1-pods">Exercise 1 - Pods</h1>
+                <h1 id="exercise-1-pods">Exercise 1 - Pods<a class="headerlink" href="#exercise-1-pods" title="Permanent link">&para;</a></h1>
 <p>The goal of this exercise is to run our first application, an Apache HTTP Server, in OpenShift.
 For this we use a <code>Pod</code> which is the smallest deployable unit of computing that you can create 
 and manage in OpenShift. A <code>Pod</code> is a group of one or more containers. In this exercise, we will
 deploy a <code>Pod</code> that runs a single container with the image <code>rhscl/httpd-24-rhel7:latest</code>.</p>
-<p><em><strong>Note</strong> For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 
-Interface (CLI)' section in oder to complete the exercise.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 
+Interface (CLI)' section in oder to complete the exercise.</p>
+</div>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Web Console</label><div class="tabbed-content">
 <h3>Create a Pod</h3>
 <p>TODO
@@ -253,12 +258,14 @@ Interface (CLI)' section in oder to complete the exercise.</em></p>
 <p>TODO</p>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Command Line Interface (CLI)</label><div class="tabbed-content">
-<h3>Create a Pod</h3>
-<ol>
-<li>At the beginning of the exercise make sure that you are in your project context. 
-    <div class="highlight"><pre><span></span><code>oc project &lt;project name&gt; 
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>At the beginning of the exercise make sure that you are in your project context. 
+<div class="highlight"><pre><span></span><code>oc project &lt;project name&gt; 
 </code></pre></div>
-   (replace <code>&lt;projet name&gt;</code> with the actual name of your own project)</li>
+(replace <code>&lt;projet name&gt;</code> with the actual name of your own project)</p>
+</div>
+<ol>
 <li>
 <p>Create a <code>Pod</code> definition file called <code>pod.yaml</code> using the <code>vi</code> editor with the following content:
     <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
@@ -272,7 +279,7 @@ Interface (CLI)' section in oder to complete the exercise.</em></p>
     <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rhscl/httpd-24-rhel7:latest</span>
 </code></pre></div>
    <em>More detailed information about the <code>Pod</code> definition file  can be found in the
-   <a href="https://docs.openshift.com/container-platform/4.5/nodes/pods/nodes-pods-using.html#nodes-pods-using-example_nodes-pods-using-ssy">OpenShift Documentation</a></em></p>
+   <a href="https://docs.openshift.com/container-platform/4.5/nodes/pods/nodes-pods-using.html#nodes-pods-using-example_nodes-pods-using-ssy">OpenShift Documentation</a>.</em></p>
 </li>
 <li>
 <p>Create a pod by using the <code>oc apply</code> command.
@@ -301,7 +308,7 @@ pod/httpd created
     in order to check if the application in the <code>Pod</code> was started successfully.
     <div class="highlight"><pre><span></span><code>oc logs &lt;pod name&gt;
 </code></pre></div></li>
-<li>Also check the <a href="#12---inspect-a-pod">1.2 - Inspect a Pod</a> section for the WebConsole.</li>
+<li>Also check the 'Inspect a Pod' section for the WebConsole.</li>
 </ol>
 <h3>Delete a Pod</h3>
 <ol>
@@ -350,7 +357,7 @@ pod/httpd created
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Exercise 2 - Deplyments
+                Exercise 2 - Deplyoments
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
