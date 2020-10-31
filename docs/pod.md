@@ -57,7 +57,7 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
         ```
         oc apply -f pod.yaml
         ```
-        The output of the command should look this:
+        The output of the command should look like this:
         ```
         [~] $ oc apply -f pod.yaml
         pod/httpd created
