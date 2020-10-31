@@ -58,12 +58,16 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/app
     1. Let's verify the state of the `Deployment` that you have created using `oc get` and `oc describe`.
         ```
         oc get deployments -o wide
+        ```
+        ```
         oc describe deployment <deployment name>
         ```
 
     2. Inspect the pods the `Deployment` has created.
         ```
         oc get pods
+        ```
+        ```
         oc get pods -o wide
         ```
 

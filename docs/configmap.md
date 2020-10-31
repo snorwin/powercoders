@@ -55,6 +55,8 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/bui
     1. Inspect the created `ConfigMap` using `oc get` and `oc describe`.
         ```
         oc get configmaps
+        ```
+        ```
         oc describe configmap <configmap name>
         ```
     2. Also check the 'Inspect a ConfigMap' section for the Web Console.

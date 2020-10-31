@@ -38,6 +38,8 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/res
     2. Inspect the `Service` using the `oc get` or the `oc describe` command.
         ```
         oc get service -o wide
+        ```
+        ```
         oc describe service <service name>
         ```
 
