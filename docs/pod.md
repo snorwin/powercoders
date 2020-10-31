@@ -9,7 +9,7 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
     Interface (CLI)' section in oder to complete the exercise.
 
 === "Web Console"
-    ### Create a Pod
+    ### Create a `Pod`
     TODO
     ```yaml
     apiVersion: v1
@@ -23,10 +23,10 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
         image: rhscl/httpd-24-rhel7:latest
     ```
     
-    ### Inspect a Pod
+    ### Inspect a `Pod`
     TODO
     
-    ### Delete a Pod
+    ### Delete a `Pod`
     TODO
 
 === "Command Line Interface (CLI)"
@@ -37,7 +37,7 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
         ```
         (replace `<projet name>` with the actual name of your own project)
 
-    ### Create a Pod
+    ### Create a `Pod`
     1. Create a `Pod` definition file called `pod.yaml` using the [`vi` editor](/vieditor/#vi-editor) with the following content:
         ```yaml
         apiVersion: v1
@@ -51,9 +51,9 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
             image: rhscl/httpd-24-rhel7:latest
         ```
        _More detailed information about the `Pod` definition file  can be found in the
-       [OpenShift Documentation](https://docs.openshift.com/container-platform/4.5/nodes/pods/nodes-pods-using.html#nodes-pods-using-example_nodes-pods-using-ssy)._
+       [OpenShift](https://docs.openshift.com/container-platform/4.5/nodes/pods/nodes-pods-using.html#nodes-pods-using-example_nodes-pods-using-ssy) or [Kubernetes](https://kubernetes.io/docs/concepts/workloads/pods/) Documentation._
        
-    2. Create a pod by using the `oc apply` command.
+    2. Create a `Pod` by using the `oc apply` command.
         ```
         oc apply -f pod.yaml
         ```
@@ -63,7 +63,7 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
         pod/httpd created
         ```
     
-    ### Inspect a Pod
+    ### Inspect a `Pod`
     1. Let's verify the state of the `Pod` that you have created using `oc get`.
         ```
         oc get pods 
@@ -74,18 +74,18 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
         oc get pods -o <output format>
         ```
     2. `oc describe` can be used to get detailed description of a given resource. 
-        Inspect the information and events of your pod `Pod`.
+        Inspect the information and events of your `Pod`.
         ```
         oc descirbe pod <pod name>
         ```
-    3.  Print the logs for a container in a pod using the `oc log` command
+    3.  Print the logs for a container in a `Pod` using the `oc log` command
         in order to check if the application in the `Pod` was started successfully.
         ```
         oc logs <pod name>
         ```
     4. Also check the 'Inspect a Pod' section for the Web Console.
     
-    ### Delete a Pod
+    ### Delete a `Pod`
     1. You won't need the `Pod` in the following exercises, therefore clean up your project.
         ```
         oc delete pod <pod name>
