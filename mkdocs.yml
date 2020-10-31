@@ -10,11 +10,16 @@ nav:
   - Introduction: index.md
   - Exercise 1 - Pods: pod.md
   - Exercise 2 - Deplyoments: deployment.md
+  - Exercise 3 - Networking: deployment.md
+  - Exercise 4 - ConfigMaps: deployment.md
+  - Appendix:
+    - vi Editor: vieditor.md
 markdown_extensions:
   - admonition
   - codehilite
   - footnotes
   - pymdownx.smartsymbols
+  - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tabbed
   - toc:

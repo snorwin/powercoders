@@ -38,7 +38,7 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
         (replace `<projet name>` with the actual name of your own project)
 
     ### Create a Pod
-    1. Create a `Pod` definition file called `pod.yaml` using the `vi` editor with the following content:
+    1. Create a `Pod` definition file called `pod.yaml` using the [`vi` editor](/vieditor/#vi-editor) with the following content:
         ```yaml
         apiVersion: v1
         kind: Pod
