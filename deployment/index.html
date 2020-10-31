@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2-deployment" class="md-skip">
+        <a href="#exercise-2-deployments" class="md-skip">
           Skip to content
         </a>
       
@@ -194,52 +194,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Exercise 2 - Deplyoments
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
     <a href="./" class="md-nav__link md-nav__link--active">
       Exercise 2 - Deplyoments
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#web-console" class="md-nav__link">
-    Web Console
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-line-interface-cli" class="md-nav__link">
-    Command Line Interface (CLI)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delete-a-pod" class="md-nav__link">
-    Delete a Pod
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -261,35 +218,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#web-console" class="md-nav__link">
-    Web Console
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#command-line-interface-cli" class="md-nav__link">
-    Command Line Interface (CLI)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delete-a-pod" class="md-nav__link">
-    Delete a Pod
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -301,38 +229,45 @@
               
                 
                 
-                <h1 id="2-deployment">2 - Deployment<a class="headerlink" href="#2-deployment" title="Permanent link">&para;</a></h1>
-<h2 id="web-console">Web Console<a class="headerlink" href="#web-console" title="Permanent link">&para;</a></h2>
-<h2 id="command-line-interface-cli">Command Line Interface (CLI)<a class="headerlink" href="#command-line-interface-cli" title="Permanent link">&para;</a></h2>
-<h3>2.1 - Create a Deployment</h3>
-<ol>
-<li>At the beginning of the exercise make sure that you are in your project context. 
-    <code>shell script
-    oc project &lt;project name&gt;</code>
-   (replace <code>&lt;projet name&gt;</code> with the actual name of your own project)</li>
-<li>Create a deployment of the Apache HTTP Server using the <code>oc create</code> command:
-    <code>shell script
-    oc create deployment httpd --image rhscl/httpd-24-rhel7:latest</code>
-   The output of the command should look this:
-   <code>[~] $ oc create deployment httpd --image rhscl/httpd-24-rhel7:latest
-   deployment.apps/httpd created</code></li>
-</ol>
-<h3>2.2 - Inspect a Deployment</h3>
-<ol>
-<li><code>shell script
-   oc get deployments -o wide
-   oc descirbe deployment &lt;deployment name&gt;</code></li>
-</ol>
-<p>```shell script
-oc get pods 
-<div class="highlight"><pre><span></span><code>```shell script
-oc get pods -o wide
+                <h1 id="exercise-2-deployments">Exercise 2 - Deployments<a class="headerlink" href="#exercise-2-deployments" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 
+Interface (CLI)' section in oder to complete the exercise.</p>
+</div>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Web Console</label><div class="tabbed-content"></div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Command Line Interface (CLI)</label><div class="tabbed-content">
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>At the beginning of the exercise make sure that you are in your project context. 
+<div class="highlight"><pre><span></span><code>oc project &lt;project name&gt; 
 </code></pre></div></p>
-<h2 id="delete-a-pod">Delete a Pod<a class="headerlink" href="#delete-a-pod" title="Permanent link">&para;</a></h2>
-<h3>Web Console</h3>
-<h3>Command Line Interface (CLI)</h3>
-<p><code>shell script
-oc delete pod &lt;pod name&gt;</code></p>
+</div>
+<h3>Create a Deployment</h3>
+<ol>
+<li>Create a deployment of the Apache HTTP Server using the <code>oc create</code> command:
+    <div class="highlight"><pre><span></span><code>oc create deployment httpd --image rhscl/httpd-24-rhel7:latest
+</code></pre></div>
+    The output of the command should look this:
+    <div class="highlight"><pre><span></span><code>[~] $ oc create deployment httpd --image rhscl/httpd-24-rhel7:latest
+deployment.apps/httpd created
+</code></pre></div></li>
+</ol>
+<h3>Inspect a Deployment</h3>
+<ol>
+<li>
+<div class="highlight"><pre><span></span><code>oc get deployments -o wide
+oc descirbe deployment &lt;deployment name&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>oc get pods 
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>oc get pods -o wide
+</code></pre></div>
+</li>
+</ol>
+<h3>Scale a Deployment</h3>
+</div>
+</div>
                 
               
               
