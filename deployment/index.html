@@ -342,13 +342,15 @@ deployment.apps/httpd created
 <li>
 <p>Let's verify the state of the <code>Deployment</code> that you have created using <code>oc get</code> and <code>oc describe</code>.
     <div class="highlight"><pre><span></span><code>oc get deployments -o wide
-oc describe deployment &lt;deployment name&gt;
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code>oc describe deployment &lt;deployment name&gt;
 </code></pre></div></p>
 </li>
 <li>
 <p>Inspect the pods the <code>Deployment</code> has created.
     <div class="highlight"><pre><span></span><code>oc get pods
-oc get pods -o wide
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code>oc get pods -o wide
 </code></pre></div></p>
 <details class="question"><summary>What is the difference between the <code>Pod</code> that was created manually and the one that was created by the <code>Deployment</code>?</summary><p>The <code>Pod</code> created from the <code>Deployment</code> have a random name.</p>
 <p><em>Example:</em>

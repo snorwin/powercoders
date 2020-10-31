@@ -384,7 +384,8 @@ Interface (CLI)' section in oder to complete the exercise.</p>
 <li>
 <p>Inspect the <code>Service</code> using the <code>oc get</code> or the <code>oc describe</code> command.
     <div class="highlight"><pre><span></span><code>oc get service -o wide
-oc describe service &lt;service name&gt;
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code>oc describe service &lt;service name&gt;
 </code></pre></div></p>
 <details class="question"><summary>How many endpoints are connected to your <code>Service</code> and why?</summary><p>There are <strong>2 endpoints</strong> connected to your <code>Service</code>, you can figure that out by using the <code>oc describe</code> command.</p>
 <div class="highlight"><pre><span></span><code>[~] $ oc describe service &lt;service name&gt;
