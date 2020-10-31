@@ -30,14 +30,14 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
     TODO
 
 === "Command Line Interface (CLI)"
-    ### Create a Pod
     !!! important
         At the beginning of the exercise make sure that you are in your project context. 
         ```
         oc project <project name> 
         ```
         (replace `<projet name>` with the actual name of your own project)
-    
+
+    ### Create a Pod
     1. Create a `Pod` definition file called `pod.yaml` using the `vi` editor with the following content:
         ```yaml
         apiVersion: v1
@@ -83,7 +83,7 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
         ```
         oc logs <pod name>
         ```
-    4. Also check the 'Inspect a Pod' section for the WebConsole.
+    4. Also check the 'Inspect a Pod' section for the Web Console.
     
     ### Delete a Pod
     1. You won't need the `Pod` in the following exercises, therefore clean up your project.
