@@ -22,6 +22,10 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tabbed
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
   - toc:
       toc_depth: 2
       permalink: true
