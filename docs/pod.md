@@ -4,8 +4,9 @@ For this we use a `Pod` which is the smallest deployable unit of computing that 
 and manage in OpenShift. A `Pod` is a group of one or more containers. In this exercise, we will
 deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7:latest`.
 
-_**Note** For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 
-Interface (CLI)' section in oder to complete the exercise._
+!!! note
+    For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 
+    Interface (CLI)' section in oder to complete the exercise.
 
 === "Web Console"
     ### Create a Pod
@@ -30,12 +31,14 @@ Interface (CLI)' section in oder to complete the exercise._
 
 === "Command Line Interface (CLI)"
     ### Create a Pod
-    1. At the beginning of the exercise make sure that you are in your project context. 
+    !!! important
+        At the beginning of the exercise make sure that you are in your project context. 
         ```
         oc project <project name> 
         ```
-       (replace `<projet name>` with the actual name of your own project)
-    2. Create a `Pod` definition file called `pod.yaml` using the `vi` editor with the following content:
+        (replace `<projet name>` with the actual name of your own project)
+    
+    1. Create a `Pod` definition file called `pod.yaml` using the `vi` editor with the following content:
         ```yaml
         apiVersion: v1
         kind: Pod
@@ -48,9 +51,9 @@ Interface (CLI)' section in oder to complete the exercise._
             image: rhscl/httpd-24-rhel7:latest
         ```
        _More detailed information about the `Pod` definition file  can be found in the
-       [OpenShift Documentation](https://docs.openshift.com/container-platform/4.5/nodes/pods/nodes-pods-using.html#nodes-pods-using-example_nodes-pods-using-ssy)_
+       [OpenShift Documentation](https://docs.openshift.com/container-platform/4.5/nodes/pods/nodes-pods-using.html#nodes-pods-using-example_nodes-pods-using-ssy)._
        
-    3. Create a pod by using the `oc apply` command.
+    2. Create a pod by using the `oc apply` command.
         ```
         oc apply -f pod.yaml
         ```
@@ -80,7 +83,7 @@ Interface (CLI)' section in oder to complete the exercise._
         ```
         oc logs <pod name>
         ```
-    4. Also check the [1.2 - Inspect a Pod](#12---inspect-a-pod) section for the WebConsole.
+    4. Also check the 'Inspect a Pod' section for the WebConsole.
     
     ### Delete a Pod
     1. You won't need the `Pod` in the following exercises, therefore clean up your project.
