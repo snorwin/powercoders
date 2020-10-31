@@ -89,4 +89,4 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/bui
 
 
 ### **🎉 Congratulations, you have made it!**
-You have successfully deployed your first personal website in the cloud. 👏
+You have successfully deployed your first personal website in the cloud using OpenShift. 👏
