@@ -15,8 +15,7 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
     apiVersion: v1
     kind: Pod
     metadata:
-      labels:
-        app: httpd
+      name: httpd
     spec:
       containers:
       - name: httpd-24
@@ -38,13 +37,12 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
         (replace `<projet name>` with the actual name of your own project)
 
     ### Create a `Pod`
-    1. Create a `Pod` definition file called `pod.yaml` using the [`vi` editor](/vieditor/#vi-editor) with the following content:
+    1. Create a `Pod` definition file called `pod.yaml` using the [`vi` editor](/powercoders/vieditor/) with the following content:
         ```yaml
         apiVersion: v1
         kind: Pod
         metadata:
-          labels:
-            app: httpd
+          name: httpd
         spec:
           containers:
           - name: httpd-24
@@ -78,7 +76,7 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
         ```
         oc descirbe pod <pod name>
         ```
-    3.  Print the logs for a container in a `Pod` using the `oc log` command
+    3.  Print the logs for a container in a `Pod` using the `oc logs` command
         in order to check if the application in the `Pod` was started successfully.
         ```
         oc logs <pod name>

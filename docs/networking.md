@@ -1,6 +1,6 @@
 # Exercise 3 - Networking
 Each `Pod` has its own IP address in order to access the application on it over the network.
-However,`Pods` are non-permanent resources and are created and destroyed by the `Deployment` dynamically.
+However,`Pods` are non-permanent resources which are created and destroyed by the `Deployment` dynamically.
 Therefore the IP addresses of your application are changing dynamically too and it is difficult to keeps track of which IP address to connect to.
 
 ## Services
@@ -31,7 +31,7 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/res
         ```
 
     ### Create a `Service`
-    1. Create a `Service` for the port `8080` of the `Deployment` that we have created in [Exercise 2](/deployment):
+    1. Create a `Service` for the port `8080` of the `Deployment` that we have created in [Exercise 2](/powercoders/deployment):
         ```
         oc expose deployment <deployment name> --port=<port>
         ```
@@ -67,4 +67,4 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/res
         ```
         oc get routes
         ```
-    3. Try to connect to the `HOST` of the `Route` using the browser.
+    3. Try to connect to the `https://HOST` of the `Route` using the browser.

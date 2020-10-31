@@ -29,7 +29,7 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/bui
         ```
 
     ### Create a `ConfigMap`
-    1. Create a `index.html` file using the [`vi` editor](/vieditor/#vi-editor) with the following content:
+    1. Create a `index.html` file using the [`vi` editor](/powercoders/vieditor/) with the following content:
         ```
         <!DOCTYPE html>
         <html>
@@ -61,31 +61,35 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/bui
 
     ### Mount a `ConfigMap`
     1. Let's add the `ConfigMap` to the `Pod` template in the `Deployment`.
-        The `oc edit` command allows us to edit existing resources using the [`vi` editor](/vieditor/#vi-editor).
+        The `oc edit` command allows us to edit existing resources using the [`vi` editor](/powercoders/vieditor/).
         ```
         oc edit deployment <deployment name>
         ```
     2. Add the ==higlighted== parts to the `Deployment`:
-        ``` hl_lines="5 6 7 8 12 13 14"
+        ``` hl_lines="9 10 11 12 16 17 18"
         apiVersion: apps/v1
         kind: Deployment
         ...
         spec:
-          volumes:
-          - name: html
-            configMap:
-              name: <configmap name> 
           ...
-          containers:
-          - image: rhscl/httpd-24-rhel7:latest
-            volumeMounts:
-            - name: html
-              mountPath: /var/www/html
+          template:
+            spec:
             ...
+              volumes:
+              - name: html
+                configMap:
+                  name: <configmap name> 
+              ...
+              containers:
+              - image: rhscl/httpd-24-rhel7:latest
+                volumeMounts:
+                - name: html
+                  mountPath: /var/www/html
+                ...
         ```
     3. Store and close the file.
         The configuration change triggers automatically a redeployment of all your `Pods` - wait a couple of seconds until it is done.
-    4. Reload your web site using the URL of the `Route` created in [Exercise 3](/networking).
+    4. Reload your web site using the URL of the `Route` created in [Exercise 3](/powercoders/networking).
 
 
 ### **🎉 Congratulations, you have made it!**

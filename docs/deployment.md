@@ -3,7 +3,7 @@ You describe the desired state of your application in a `Deployment` by specifyi
 The `Deployment` involve a `ReplicaSet` to manage the `Pods` in the background.
 
 The `ReplicaSet` ensures that specified number of `Pod` replicas are running all the time.
-If a `Pod` crashes or is deleted the `ReplicaSet` create new instances up to the defined number.
+If a `Pod` crashes or is deleted the `ReplicaSet` creates new instances up to the defined number.
 Likewise, if there are more `Pods` running than desired, it deletes as many as necessary.
 
 _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/applications/deployments/what-deployments-are.html#deployments-repliasets_what-deployments-are) or [Kubernetes](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) Documentation for more information about `Deployemnts` and `ReplicaSets`._
@@ -58,7 +58,7 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/app
     1. Let's verify the state of the `Deployment` that you have created using `oc get` and `oc describe`.
         ```
         oc get deployments -o wide
-        oc descirbe deployment <deployment name>
+        oc describe deployment <deployment name>
         ```
 
     2. Inspect the pods the `Deployment` has created.
