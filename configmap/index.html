@@ -292,6 +292,92 @@
                 
                 
                 <h1 id="exercise-4-configmaps">Exercise 4 - ConfigMaps<a class="headerlink" href="#exercise-4-configmaps" title="Permanent link">&para;</a></h1>
+<p>We want to change the <code>index.html</code> served by the Apache HTTP Server in order to personalize our website.
+There are multiple approaches to achieve this:</p>
+<ul>
+<li>change the container image by adding the file during the build to the image (out of scope for this workshop)</li>
+<li>use a <code>ConfigMap</code> to inject the file to the container in the <code>Pod</code></li>
+</ul>
+<p><code>ConfigMap</code> provides a mechanisms to inject containers with configuration data (entire files or single values) while keeping the containers unchanged. </p>
+<p><em>Check out the <a href="https://docs.openshift.com/container-platform/4.5/builds/builds-configmaps.html">OpenShift</a> or <a href="https://kubernetes.io/docs/concepts/configuration/configmap/">Kubernetes</a> Documentation for more information about <code>ConfigMaps</code>.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 
+Interface (CLI)' section in oder to complete the exercise.</p>
+</div>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Web Console</label><div class="tabbed-content">
+<h3>Create a <code>ConfigMap</code></h3>
+<h3>Inspect a <code>ConfigMap</code></h3>
+<h3>Mount a <code>ConfigMap</code></h3>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Command Line Interface (CLI)</label><div class="tabbed-content">
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>At the beginning of the exercise make sure that you are in your project context. 
+<div class="highlight"><pre><span></span><code>oc project &lt;project name&gt; 
+</code></pre></div></p>
+</div>
+<h3>Create a <code>ConfigMap</code></h3>
+<ol>
+<li>Create a <code>index.html</code> file using the <a href="/vieditor/#vi-editor"><code>vi</code> editor</a> with the following content:
+    <div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;John Doe&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;John Doe&lt;/h1&gt;
+    &lt;p&gt;
+    Today I learned how to deploy my own website in the cloud
+    using an Apache HTTP Server (httpd) running on OpenShift.
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+    (replace <code>John Doe</code> with your actual name - if you are John Doe you can skip this)</li>
+<li>Create a <code>ConfigMap</code> with the <code>index.html</code>.
+    <div class="highlight"><pre><span></span><code>oc create configmap httpd --from-file=index.html
+</code></pre></div></li>
+</ol>
+<h3>Inspect a <code>ConfigMap</code></h3>
+<ol>
+<li>Inspect the created <code>ConfigMap</code> using <code>oc get</code> and <code>oc describe</code>.
+    <div class="highlight"><pre><span></span><code>oc get configmaps
+oc describe configmap &lt;configmap name&gt;
+</code></pre></div></li>
+<li>Also check the 'Inspect a ConfigMap' section for the Web Console.</li>
+</ol>
+<h3>Mount a <code>ConfigMap</code></h3>
+<ol>
+<li>Let's add the <code>ConfigMap</code> to the <code>Pod</code> template in the <code>Deployment</code>.
+    The <code>oc edit</code> command allows us to edit existing resources using the <a href="/vieditor/#vi-editor"><code>vi</code> editor</a>.
+    <div class="highlight"><pre><span></span><code>oc edit deployment &lt;deployment name&gt;
+</code></pre></div></li>
+<li>Add the <mark>higlighted</mark> parts to the <code>Deployment</code>:
+    <div class="highlight"><pre><span></span><code>apiVersion: apps/v1
+kind: Deployment
+...
+spec:
+<span class="hll">  volumes:
+</span><span class="hll">  - name: html
+</span><span class="hll">    configMap:
+</span><span class="hll">      name: &lt;configmap name&gt; 
+</span>  ...
+  containers:
+  - image: rhscl/httpd-24-rhel7:latest
+<span class="hll">    volumeMounts:
+</span><span class="hll">    - name: html
+</span><span class="hll">      mountPath: /var/www/html
+</span>    ...
+</code></pre></div></li>
+<li>Store and close the file.
+    The configuration change triggers automatically a redeployment of all your <code>Pods</code> - wait a couple of seconds until it is done.</li>
+<li>Reload your web site using the URL of the <code>Route</code> created in <a href="/networking">Exercise 3</a>.</li>
+</ol>
+</div>
+</div>
+<h3><strong>🎉 Congratulations, you have made it!</strong></h3>
+<p>You have successfully deployed your first personal website in the cloud. 👏</p>
                 
               
               
