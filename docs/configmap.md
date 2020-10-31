@@ -65,7 +65,7 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/bui
         ```
         oc edit deployment <deployment name>
         ```
-    2. Add the ==higlighted== parts to the `Deployment`:
+    2. Add the ==highlighted== parts to the `Deployment`:
         ``` hl_lines="9 10 11 12 16 17 18"
         apiVersion: apps/v1
         kind: Deployment
