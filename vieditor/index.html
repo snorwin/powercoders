@@ -13,7 +13,7 @@
     
     
       
-        <title>Exercise 4 - ConfigMaps - Powercoders - Introduction to Cloud Computing</title>
+        <title>vi Editor - Powercoders - Introduction to Cloud Computing</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercise-2-deployments" class="md-skip">
+        <a href="#vi-editor" class="md-skip">
           Skip to content
         </a>
       
@@ -89,7 +89,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Exercise 4 - ConfigMaps
+              vi Editor
             
           </span>
         </div>
@@ -186,7 +186,7 @@
 
 
   <li class="md-nav__item">
-    <a href="./" class="md-nav__link">
+    <a href="../deployment/" class="md-nav__link">
       Exercise 2 - Deplyoments
     </a>
   </li>
@@ -198,8 +198,20 @@
 
 
   <li class="md-nav__item">
-    <a href="./" class="md-nav__link">
+    <a href="../deployment/" class="md-nav__link">
       Exercise 3 - Networking
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../deployment/" class="md-nav__link">
+      Exercise 4 - ConfigMaps
     </a>
   </li>
 
@@ -211,28 +223,9 @@
   
 
 
-  <li class="md-nav__item md-nav__item--active">
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
-      Exercise 4 - ConfigMaps
-    </a>
-    
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
       Appendix
@@ -250,11 +243,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../vieditor/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        vi Editor
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       vi Editor
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#view-a-file" class="md-nav__link">
+    View a file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editcreate-a-file" class="md-nav__link">
+    Edit/Create a file
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -280,6 +318,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#view-a-file" class="md-nav__link">
+    View a file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editcreate-a-file" class="md-nav__link">
+    Edit/Create a file
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -291,82 +351,33 @@
               
                 
                 
-                <h1 id="exercise-2-deployments">Exercise 2 - Deployments<a class="headerlink" href="#exercise-2-deployments" title="Permanent link">&para;</a></h1>
+                <h1 id="vi-editor"><code>vi</code> Editor<a class="headerlink" href="#vi-editor" title="Permanent link">&para;</a></h1>
+<h2 id="view-a-file">View a file<a class="headerlink" href="#view-a-file" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Open a file:
+    <div class="highlight"><pre><span></span><code>vi &lt;file name&gt;
+</code></pre></div></li>
+<li>Close the file by typing <code>:q</code> and press <code>ENTER</code></li>
+</ol>
+<h2 id="editcreate-a-file">Edit/Create a file<a class="headerlink" href="#editcreate-a-file" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Open or create a file:
+    <div class="highlight"><pre><span></span><code>vi &lt;file name&gt;
+</code></pre></div></li>
+<li>Press <code>i</code> to activate the insert mode</li>
+<li>Navigate to the right location using the arrow keys: <code>←</code> <code>↑</code> <code>→</code> <code>↓</code></li>
+<li>
+<p>Modify or add some content</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 
-Interface (CLI)' section in oder to complete the exercise.</p>
+<p>Use <code>ctrl</code> <code>shift</code> + <code>c</code>  and <code>ctrl</code> <code>shift</code> + <code>v</code> for copy/paste content in the <code>vi</code> editor`.</p>
 </div>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Web Console</label><div class="tabbed-content">
-<h3>Create a Deployment</h3>
-<p>TODO</p>
-<h3>Inspect a Deployment</h3>
-<p>TODO</p>
-<details class="question"><summary>What is the difference between the <code>Pod</code> that was created manually and the one that was created by the <code>Deployment</code>?</summary><p>The <code>Pod</code> created from the <code>Deployment</code> have a random name.</p>
-<p><em>Example:</em>
-<div class="highlight"><pre><span></span><code>httpd-12cf4d11ce-p9w5h
-</code></pre></div>
-The <code>Deployment</code> adds a random string (e.g. <code>12cf4d11ce</code>) to the deployment name while creating the <code>ReplicaSet</code>.
-The <code>ReplicaSet</code> itself adds  another random string to the each <code>Pod</code> (e.g. <code>p9w5h</code>).</p>
-</details>
-<details class="question"><summary>What happens if you delete a pod uisng <code>oc delete pod &lt;pod name&gt;</code>?</summary><p>The <code>ReplicaSet</code> of the <code>Deployment</code> automatically creates a new <code>Pod</code>. The same would happen if the application in the container of the <code>Pod</code> crashed or terminated.</p>
-</details>
-<h3>Scale a Deployment</h3>
-<p>TODO</p>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Command Line Interface (CLI)</label><div class="tabbed-content">
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>At the beginning of the exercise make sure that you are in your project context. 
-<div class="highlight"><pre><span></span><code>oc project &lt;project name&gt; 
-</code></pre></div></p>
-</div>
-<h3>Create a Deployment</h3>
-<ol>
-<li>Create a deployment of the Apache HTTP Server using the <code>oc create</code> command:
-    <div class="highlight"><pre><span></span><code>oc create deployment httpd --image rhscl/httpd-24-rhel7:latest
-</code></pre></div>
-    The output of the command should look this:
-    <div class="highlight"><pre><span></span><code>[~] $ oc create deployment httpd --image rhscl/httpd-24-rhel7:latest
-deployment.apps/httpd created
-</code></pre></div></li>
-</ol>
-<h3>Inspect a Deployment</h3>
-<ol>
-<li>
-<p>Let's verify the state of the <code>Deployment</code> that you have created using <code>oc get</code> and <code>oc describe</code>.
-    <div class="highlight"><pre><span></span><code>oc get deployments -o wide
-oc descirbe deployment &lt;deployment name&gt;
-</code></pre></div></p>
 </li>
 <li>
-<p>Inspect the pods the <code>Deployment</code> has created.
-    <div class="highlight"><pre><span></span><code>oc get pods
-oc get pods -o wide
-</code></pre></div></p>
-<details class="question"><summary>What is the difference between the <code>Pod</code> that was created manually and the one that was created by the <code>Deployment</code>?</summary><p>The <code>Pod</code> created from the <code>Deployment</code> have a random name.</p>
-<p><em>Example:</em>
-    <div class="highlight"><pre><span></span><code>httpd-12cf4d11ce-p9w5h
-</code></pre></div>
-    The <code>Deployment</code> adds a random string (e.g. <code>12cf4d11ce</code>) to the deployment name while creating the <code>ReplicaSet</code>.
-    The <code>ReplicaSet</code> itself adds  another random string to the each <code>Pod</code> (e.g. <code>p9w5h</code>).</p>
-</details>
-<details class="question"><summary>What happens if you delete a pod uisng <code>oc delete pod &lt;pod name&gt;</code>?</summary><p>The <code>ReplicaSet</code> of the <code>Deployment</code> automatically creates a new <code>Pod</code>. The same would happen if the application in the container of the <code>Pod</code> crashed or terminated.</p>
-</details>
+<p>Press <code>ESC</code> to exit the insert mode</p>
 </li>
-<li>
-<p>Also check the 'Inspect a Deployment' section for the Web Console.</p>
-</li>
+<li>Store and close the file by typing <code>:wq</code> and press <code>ENTER</code></li>
 </ol>
-<h3>Scale a Deployment</h3>
-<ol>
-<li>Scale the <code>Deployment</code> to have another <code>Pod</code> of the application to achieve a redundant and stable setup.
-    <div class="highlight"><pre><span></span><code>oc scale deployment &lt;deployment name&gt; --replicas=2
-</code></pre></div></li>
-<li>Inspect the deployment and pods again.</li>
-</ol>
-</div>
-</div>
                 
               
               
@@ -385,7 +396,7 @@ oc get pods -o wide
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="./" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../deployment/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -394,25 +405,11 @@ oc get pods -o wide
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Exercise 3 - Networking
+                Exercise 4 - ConfigMaps
               </div>
             </div>
           </a>
         
-        
-          <a href="../vieditor/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                vi Editor
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
         
       </nav>
     </div>
