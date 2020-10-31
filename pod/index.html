@@ -307,8 +307,7 @@ Interface (CLI)' section in oder to complete the exercise.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
 <span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
 <span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">labels</span><span class="p">:</span>
-    <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
 <span class="nt">spec</span><span class="p">:</span>
   <span class="nt">containers</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd-24</span>
@@ -330,12 +329,11 @@ Interface (CLI)' section in oder to complete the exercise.</p>
 <h3>Create a <code>Pod</code></h3>
 <ol>
 <li>
-<p>Create a <code>Pod</code> definition file called <code>pod.yaml</code> using the <a href="/vieditor/#vi-editor"><code>vi</code> editor</a> with the following content:
+<p>Create a <code>Pod</code> definition file called <code>pod.yaml</code> using the <a href="/powercoders/vieditor/"><code>vi</code> editor</a> with the following content:
     <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
 <span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
 <span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">labels</span><span class="p">:</span>
-    <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
 <span class="nt">spec</span><span class="p">:</span>
   <span class="nt">containers</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd-24</span>
@@ -367,7 +365,7 @@ pod/httpd created
     Inspect the information and events of your <code>Pod</code>.
     <div class="highlight"><pre><span></span><code>oc descirbe pod &lt;pod name&gt;
 </code></pre></div></li>
-<li>Print the logs for a container in a <code>Pod</code> using the <code>oc log</code> command
+<li>Print the logs for a container in a <code>Pod</code> using the <code>oc logs</code> command
     in order to check if the application in the <code>Pod</code> was started successfully.
     <div class="highlight"><pre><span></span><code>oc logs &lt;pod name&gt;
 </code></pre></div></li>

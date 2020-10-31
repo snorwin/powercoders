@@ -319,7 +319,7 @@ Interface (CLI)' section in oder to complete the exercise.</p>
 </div>
 <h3>Create a <code>ConfigMap</code></h3>
 <ol>
-<li>Create a <code>index.html</code> file using the <a href="/vieditor/#vi-editor"><code>vi</code> editor</a> with the following content:
+<li>Create a <code>index.html</code> file using the <a href="/powercoders/vieditor/"><code>vi</code> editor</a> with the following content:
     <div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -350,7 +350,7 @@ oc describe configmap &lt;configmap name&gt;
 <h3>Mount a <code>ConfigMap</code></h3>
 <ol>
 <li>Let's add the <code>ConfigMap</code> to the <code>Pod</code> template in the <code>Deployment</code>.
-    The <code>oc edit</code> command allows us to edit existing resources using the <a href="/vieditor/#vi-editor"><code>vi</code> editor</a>.
+    The <code>oc edit</code> command allows us to edit existing resources using the <a href="/powercoders/vieditor/"><code>vi</code> editor</a>.
     <div class="highlight"><pre><span></span><code>oc edit deployment &lt;deployment name&gt;
 </code></pre></div></li>
 <li>Add the <mark>higlighted</mark> parts to the <code>Deployment</code>:
@@ -358,26 +358,30 @@ oc describe configmap &lt;configmap name&gt;
 kind: Deployment
 ...
 spec:
-<span class="hll">  volumes:
-</span><span class="hll">  - name: html
-</span><span class="hll">    configMap:
-</span><span class="hll">      name: &lt;configmap name&gt; 
-</span>  ...
-  containers:
-  - image: rhscl/httpd-24-rhel7:latest
-<span class="hll">    volumeMounts:
-</span><span class="hll">    - name: html
-</span><span class="hll">      mountPath: /var/www/html
-</span>    ...
+  ...
+  template:
+    spec:
+    ...
+<span class="hll">      volumes:
+</span><span class="hll">      - name: html
+</span><span class="hll">        configMap:
+</span><span class="hll">          name: &lt;configmap name&gt; 
+</span>      ...
+      containers:
+      - image: rhscl/httpd-24-rhel7:latest
+<span class="hll">        volumeMounts:
+</span><span class="hll">        - name: html
+</span><span class="hll">          mountPath: /var/www/html
+</span>        ...
 </code></pre></div></li>
 <li>Store and close the file.
     The configuration change triggers automatically a redeployment of all your <code>Pods</code> - wait a couple of seconds until it is done.</li>
-<li>Reload your web site using the URL of the <code>Route</code> created in <a href="/networking">Exercise 3</a>.</li>
+<li>Reload your web site using the URL of the <code>Route</code> created in <a href="/powercoders/networking">Exercise 3</a>.</li>
 </ol>
 </div>
 </div>
 <h3><strong>🎉 Congratulations, you have made it!</strong></h3>
-<p>You have successfully deployed your first personal website in the cloud. 👏</p>
+<p>You have successfully deployed your first personal website in the cloud using OpenShift. 👏</p>
                 
               
               

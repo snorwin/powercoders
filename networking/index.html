@@ -351,7 +351,7 @@
                 
                 <h1 id="exercise-3-networking">Exercise 3 - Networking<a class="headerlink" href="#exercise-3-networking" title="Permanent link">&para;</a></h1>
 <p>Each <code>Pod</code> has its own IP address in order to access the application on it over the network.
-However,<code>Pods</code> are non-permanent resources and are created and destroyed by the <code>Deployment</code> dynamically.
+However,<code>Pods</code> are non-permanent resources which are created and destroyed by the <code>Deployment</code> dynamically.
 Therefore the IP addresses of your application are changing dynamically too and it is difficult to keeps track of which IP address to connect to.</p>
 <h2 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h2>
 <p>The <code>Service</code> is an abstract way to expose an application running on a set of <code>Pods</code> and load-balance the requests across them.
@@ -378,7 +378,7 @@ Interface (CLI)' section in oder to complete the exercise.</p>
 </div>
 <h3>Create a <code>Service</code></h3>
 <ol>
-<li>Create a <code>Service</code> for the port <code>8080</code> of the <code>Deployment</code> that we have created in <a href="/deployment">Exercise 2</a>:
+<li>Create a <code>Service</code> for the port <code>8080</code> of the <code>Deployment</code> that we have created in <a href="/powercoders/deployment">Exercise 2</a>:
     <div class="highlight"><pre><span></span><code>oc expose deployment &lt;deployment name&gt; --port=&lt;port&gt;
 </code></pre></div></li>
 <li>
@@ -407,7 +407,7 @@ Endpoints: &lt;IP endpoint 1&gt;:8080,&lt;IP endpoint 2&gt;:8080
 <li>Inspect the new <code>Route</code> using the <code>oc get</code> command.
     <div class="highlight"><pre><span></span><code>oc get routes
 </code></pre></div></li>
-<li>Try to connect to the <code>HOST</code> of the <code>Route</code> using the browser.</li>
+<li>Try to connect to the <code>https://HOST</code> of the <code>Route</code> using the browser.</li>
 </ol>
 </div>
 </div>

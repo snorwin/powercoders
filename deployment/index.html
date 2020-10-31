@@ -295,7 +295,7 @@
 <p>You describe the desired state of your application in a <code>Deployment</code> by specifying the number of replicas and a <code>Pod</code> template.
 The <code>Deployment</code> involve a <code>ReplicaSet</code> to manage the <code>Pods</code> in the background.</p>
 <p>The <code>ReplicaSet</code> ensures that specified number of <code>Pod</code> replicas are running all the time.
-If a <code>Pod</code> crashes or is deleted the <code>ReplicaSet</code> create new instances up to the defined number.
+If a <code>Pod</code> crashes or is deleted the <code>ReplicaSet</code> creates new instances up to the defined number.
 Likewise, if there are more <code>Pods</code> running than desired, it deletes as many as necessary.</p>
 <p><em>Check out the <a href="https://docs.openshift.com/container-platform/4.5/applications/deployments/what-deployments-are.html#deployments-repliasets_what-deployments-are">OpenShift</a> or <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Kubernetes</a> Documentation for more information about <code>Deployemnts</code> and <code>ReplicaSets</code>.</em></p>
 <div class="admonition note">
@@ -342,7 +342,7 @@ deployment.apps/httpd created
 <li>
 <p>Let's verify the state of the <code>Deployment</code> that you have created using <code>oc get</code> and <code>oc describe</code>.
     <div class="highlight"><pre><span></span><code>oc get deployments -o wide
-oc descirbe deployment &lt;deployment name&gt;
+oc describe deployment &lt;deployment name&gt;
 </code></pre></div></p>
 </li>
 <li>
