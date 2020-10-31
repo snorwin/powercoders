@@ -1,45 +1,44 @@
-# 2 - Deployment
-
-## Web Console
-
-## Command Line Interface (CLI)
-### 2.1 - Create a Deployment
-1. At the beginning of the exercise make sure that you are in your project context. 
-    ```shell script
-    oc project <project name> 
-    ```
-   (replace `<projet name>` with the actual name of your own project)
-2. Create a deployment of the Apache HTTP Server using the `oc create` command:
-    ```shell script
-    oc create deployment httpd --image rhscl/httpd-24-rhel7:latest
-    ```
-   The output of the command should look this:
-   ```
-   [~] $ oc create deployment httpd --image rhscl/httpd-24-rhel7:latest
-   deployment.apps/httpd created
-    ```
-
-### 2.2 - Inspect a Deployment
-1. 
-   ```shell script
-   oc get deployments -o wide
-   oc descirbe deployment <deployment name>
-   ```
-
-```shell script
-oc get pods 
-```
-
-```shell script
-oc get pods -o wide
-```
+# Exercise 2 - Deployments
 
 
 
-## Delete a Pod
-### Web Console
+!!! note
+    For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 
+    Interface (CLI)' section in oder to complete the exercise.
 
-### Command Line Interface (CLI)
-```shell script
-oc delete pod <pod name>
-```
+=== "Web Console"
+
+=== "Command Line Interface (CLI)"
+    !!! important
+        At the beginning of the exercise make sure that you are in your project context. 
+        ```
+        oc project <project name> 
+        ```
+
+    ### Create a Deployment
+    1. Create a deployment of the Apache HTTP Server using the `oc create` command:
+        ```
+        oc create deployment httpd --image rhscl/httpd-24-rhel7:latest
+        ```
+        The output of the command should look this:
+        ```
+        [~] $ oc create deployment httpd --image rhscl/httpd-24-rhel7:latest
+        deployment.apps/httpd created
+        ```
+
+    ### Inspect a Deployment
+    1. 
+        ```
+        oc get deployments -o wide
+        oc descirbe deployment <deployment name>
+        ```
+    
+        ```
+        oc get pods 
+        ```
+        
+        ```
+        oc get pods -o wide
+        ```
+    
+    ### Scale a Deployment
