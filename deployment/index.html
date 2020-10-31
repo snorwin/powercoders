@@ -13,7 +13,7 @@
     
     
       
-        <title>Exercise 4 - ConfigMaps - Powercoders - Introduction to Cloud Computing</title>
+        <title>Exercise 2 - Deplyoments - Powercoders - Introduction to Cloud Computing</title>
       
     
     
@@ -89,7 +89,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Exercise 4 - ConfigMaps
+              Exercise 2 - Deplyoments
             
           </span>
         </div>
@@ -184,30 +184,6 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="./" class="md-nav__link">
-      Exercise 2 - Deplyoments
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="./" class="md-nav__link">
-      Exercise 3 - Networking
-    </a>
-  </li>
-
-    
-      
-      
-      
-
   
 
 
@@ -219,9 +195,33 @@
     
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Exercise 4 - ConfigMaps
+      Exercise 2 - Deplyoments
     </a>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../networking/" class="md-nav__link">
+      Exercise 3 - Networking
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../configmap/" class="md-nav__link">
+      Exercise 4 - ConfigMaps
+    </a>
   </li>
 
     
@@ -292,15 +292,21 @@
                 
                 
                 <h1 id="exercise-2-deployments">Exercise 2 - Deployments<a class="headerlink" href="#exercise-2-deployments" title="Permanent link">&para;</a></h1>
+<p>You describe the desired state of your application in a <code>Deployment</code> by specifying the number of replicas and a <code>Pod</code> template.
+The <code>Deployment</code> involve a <code>ReplicaSet</code> to manage the <code>Pods</code> in the background.</p>
+<p>The <code>ReplicaSet</code> ensures that specified number of <code>Pod</code> replicas are running all the time.
+If a <code>Pod</code> crashes or is deleted the <code>ReplicaSet</code> create new instances up to the defined number.
+Likewise, if there are more <code>Pods</code> running than desired, it deletes as many as necessary.</p>
+<p><em>Check out the <a href="https://docs.openshift.com/container-platform/4.5/applications/deployments/what-deployments-are.html#deployments-repliasets_what-deployments-are">OpenShift</a> or <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Kubernetes</a> Documentation for more information about <code>Deployemnts</code> and <code>ReplicaSets</code>.</em></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 
 Interface (CLI)' section in oder to complete the exercise.</p>
 </div>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Web Console</label><div class="tabbed-content">
-<h3>Create a Deployment</h3>
+<h3>Create a <code>Deployment</code></h3>
 <p>TODO</p>
-<h3>Inspect a Deployment</h3>
+<h3>Inspect a <code>Deployment</code></h3>
 <p>TODO</p>
 <details class="question"><summary>What is the difference between the <code>Pod</code> that was created manually and the one that was created by the <code>Deployment</code>?</summary><p>The <code>Pod</code> created from the <code>Deployment</code> have a random name.</p>
 <p><em>Example:</em>
@@ -311,7 +317,7 @@ The <code>ReplicaSet</code> itself adds  another random string to the each <code
 </details>
 <details class="question"><summary>What happens if you delete a pod uisng <code>oc delete pod &lt;pod name&gt;</code>?</summary><p>The <code>ReplicaSet</code> of the <code>Deployment</code> automatically creates a new <code>Pod</code>. The same would happen if the application in the container of the <code>Pod</code> crashed or terminated.</p>
 </details>
-<h3>Scale a Deployment</h3>
+<h3>Scale a <code>Deployment</code></h3>
 <p>TODO</p>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Command Line Interface (CLI)</label><div class="tabbed-content">
@@ -321,9 +327,9 @@ The <code>ReplicaSet</code> itself adds  another random string to the each <code
 <div class="highlight"><pre><span></span><code>oc project &lt;project name&gt; 
 </code></pre></div></p>
 </div>
-<h3>Create a Deployment</h3>
+<h3>Create a <code>Deployment</code></h3>
 <ol>
-<li>Create a deployment of the Apache HTTP Server using the <code>oc create</code> command:
+<li>Create a <code>Deployment</code> of the Apache HTTP Server using the <code>oc create</code> command:
     <div class="highlight"><pre><span></span><code>oc create deployment httpd --image rhscl/httpd-24-rhel7:latest
 </code></pre></div>
     The output of the command should look this:
@@ -331,7 +337,7 @@ The <code>ReplicaSet</code> itself adds  another random string to the each <code
 deployment.apps/httpd created
 </code></pre></div></li>
 </ol>
-<h3>Inspect a Deployment</h3>
+<h3>Inspect a <code>Deployment</code></h3>
 <ol>
 <li>
 <p>Let's verify the state of the <code>Deployment</code> that you have created using <code>oc get</code> and <code>oc describe</code>.
@@ -358,12 +364,12 @@ oc get pods -o wide
 <p>Also check the 'Inspect a Deployment' section for the Web Console.</p>
 </li>
 </ol>
-<h3>Scale a Deployment</h3>
+<h3>Scale a <code>Deployment</code></h3>
 <ol>
 <li>Scale the <code>Deployment</code> to have another <code>Pod</code> of the application to achieve a redundant and stable setup.
     <div class="highlight"><pre><span></span><code>oc scale deployment &lt;deployment name&gt; --replicas=2
 </code></pre></div></li>
-<li>Inspect the deployment and pods again.</li>
+<li>Inspect the <code>Deployment</code> and pods again.</li>
 </ol>
 </div>
 </div>
@@ -385,7 +391,7 @@ oc get pods -o wide
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="./" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../pod/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -394,19 +400,19 @@ oc get pods -o wide
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Exercise 3 - Networking
+                Exercise 1 - Pods
               </div>
             </div>
           </a>
         
         
-          <a href="../vieditor/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../networking/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                vi Editor
+                Exercise 3 - Networking
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

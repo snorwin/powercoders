@@ -207,7 +207,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../deployment/" class="md-nav__link">
+    <a href="../networking/" class="md-nav__link">
       Exercise 3 - Networking
     </a>
   </li>
@@ -219,7 +219,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../deployment/" class="md-nav__link">
+    <a href="../configmap/" class="md-nav__link">
       Exercise 4 - ConfigMaps
     </a>
   </li>
@@ -302,7 +302,7 @@ deploy a <code>Pod</code> that runs a single container with the image <code>rhsc
 Interface (CLI)' section in oder to complete the exercise.</p>
 </div>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Web Console</label><div class="tabbed-content">
-<h3>Create a Pod</h3>
+<h3>Create a <code>Pod</code></h3>
 <p>TODO
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
 <span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
@@ -314,9 +314,9 @@ Interface (CLI)' section in oder to complete the exercise.</p>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd-24</span>
     <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rhscl/httpd-24-rhel7:latest</span>
 </code></pre></div></p>
-<h3>Inspect a Pod</h3>
+<h3>Inspect a <code>Pod</code></h3>
 <p>TODO</p>
-<h3>Delete a Pod</h3>
+<h3>Delete a <code>Pod</code></h3>
 <p>TODO</p>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Command Line Interface (CLI)</label><div class="tabbed-content">
@@ -327,7 +327,7 @@ Interface (CLI)' section in oder to complete the exercise.</p>
 </code></pre></div>
 (replace <code>&lt;projet name&gt;</code> with the actual name of your own project)</p>
 </div>
-<h3>Create a Pod</h3>
+<h3>Create a <code>Pod</code></h3>
 <ol>
 <li>
 <p>Create a <code>Pod</code> definition file called <code>pod.yaml</code> using the <a href="/vieditor/#vi-editor"><code>vi</code> editor</a> with the following content:
@@ -342,10 +342,10 @@ Interface (CLI)' section in oder to complete the exercise.</p>
     <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rhscl/httpd-24-rhel7:latest</span>
 </code></pre></div>
    <em>More detailed information about the <code>Pod</code> definition file  can be found in the
-   <a href="https://docs.openshift.com/container-platform/4.5/nodes/pods/nodes-pods-using.html#nodes-pods-using-example_nodes-pods-using-ssy">OpenShift Documentation</a>.</em></p>
+   <a href="https://docs.openshift.com/container-platform/4.5/nodes/pods/nodes-pods-using.html#nodes-pods-using-example_nodes-pods-using-ssy">OpenShift</a> or <a href="https://kubernetes.io/docs/concepts/workloads/pods/">Kubernetes</a> Documentation.</em></p>
 </li>
 <li>
-<p>Create a pod by using the <code>oc apply</code> command.
+<p>Create a <code>Pod</code> by using the <code>oc apply</code> command.
     <div class="highlight"><pre><span></span><code>oc apply -f pod.yaml
 </code></pre></div>
     The output of the command should look like this:
@@ -354,7 +354,7 @@ pod/httpd created
 </code></pre></div></p>
 </li>
 </ol>
-<h3>Inspect a Pod</h3>
+<h3>Inspect a <code>Pod</code></h3>
 <ol>
 <li>Let's verify the state of the <code>Pod</code> that you have created using <code>oc get</code>.
     <div class="highlight"><pre><span></span><code>oc get pods 
@@ -364,16 +364,16 @@ pod/httpd created
     <div class="highlight"><pre><span></span><code>oc get pods -o &lt;output format&gt;
 </code></pre></div></li>
 <li><code>oc describe</code> can be used to get detailed description of a given resource. 
-    Inspect the information and events of your pod <code>Pod</code>.
+    Inspect the information and events of your <code>Pod</code>.
     <div class="highlight"><pre><span></span><code>oc descirbe pod &lt;pod name&gt;
 </code></pre></div></li>
-<li>Print the logs for a container in a pod using the <code>oc log</code> command
+<li>Print the logs for a container in a <code>Pod</code> using the <code>oc log</code> command
     in order to check if the application in the <code>Pod</code> was started successfully.
     <div class="highlight"><pre><span></span><code>oc logs &lt;pod name&gt;
 </code></pre></div></li>
 <li>Also check the 'Inspect a Pod' section for the Web Console.</li>
 </ol>
-<h3>Delete a Pod</h3>
+<h3>Delete a <code>Pod</code></h3>
 <ol>
 <li>You won't need the <code>Pod</code> in the following exercises, therefore clean up your project.
     <div class="highlight"><pre><span></span><code>oc delete pod &lt;pod name&gt;

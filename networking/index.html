@@ -13,7 +13,7 @@
     
     
       
-        <title>vi Editor - Powercoders - Introduction to Cloud Computing</title>
+        <title>Exercise 3 - Networking - Powercoders - Introduction to Cloud Computing</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vi-editor" class="md-skip">
+        <a href="#exercise-3-networking" class="md-skip">
           Skip to content
         </a>
       
@@ -89,7 +89,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              vi Editor
+              Exercise 3 - Networking
             
           </span>
         </div>
@@ -196,11 +196,56 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../networking/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Exercise 3 - Networking
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Exercise 3 - Networking
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    Services
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes" class="md-nav__link">
+    Routes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -220,12 +265,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
       Appendix
@@ -243,56 +286,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        vi Editor
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../vieditor/" class="md-nav__link">
       vi Editor
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#view-a-file" class="md-nav__link">
-    View a file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#editcreate-a-file" class="md-nav__link">
-    Edit/Create a file
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -325,15 +323,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#view-a-file" class="md-nav__link">
-    View a file
+  <a href="#services" class="md-nav__link">
+    Services
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#editcreate-a-file" class="md-nav__link">
-    Edit/Create a file
+  <a href="#routes" class="md-nav__link">
+    Routes
   </a>
   
 </li>
@@ -351,33 +349,68 @@
               
                 
                 
-                <h1 id="vi-editor"><code>vi</code> Editor<a class="headerlink" href="#vi-editor" title="Permanent link">&para;</a></h1>
-<h2 id="view-a-file">View a file<a class="headerlink" href="#view-a-file" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Open a file:
-    <div class="highlight"><pre><span></span><code>vi &lt;file name&gt;
-</code></pre></div></li>
-<li>Close the file by typing <code>:q</code> and press <code>ENTER</code></li>
-</ol>
-<h2 id="editcreate-a-file">Edit/Create a file<a class="headerlink" href="#editcreate-a-file" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Open or create a file:
-    <div class="highlight"><pre><span></span><code>vi &lt;file name&gt;
-</code></pre></div></li>
-<li>Press <code>i</code> to activate the insert mode</li>
-<li>Navigate to the right location using the arrow keys: <code>←</code> <code>↑</code> <code>→</code> <code>↓</code></li>
-<li>
-<p>Modify or add some content</p>
+                <h1 id="exercise-3-networking">Exercise 3 - Networking<a class="headerlink" href="#exercise-3-networking" title="Permanent link">&para;</a></h1>
+<p>Each <code>Pod</code> has its own IP address in order to access the application on it over the network.
+However,<code>Pods</code> are non-permanent resources and are created and destroyed by the <code>Deployment</code> dynamically.
+Therefore the IP addresses of your application are changing dynamically too and it is difficult to keeps track of which IP address to connect to.</p>
+<h2 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h2>
+<p>The <code>Service</code> is an abstract way to expose an application running on a set of <code>Pods</code> and load-balance the requests across them.
+Instead of connecting to the IP addresses of the <code>Pods</code> directly you can connect instead to its <code>Service</code>.</p>
+<p><em>Check out the <a href="https://kubernetes.io/docs/concepts/services-networking/service/">Kubernetes</a> Documentation for more information about <code>Services</code>.</em></p>
+<h2 id="routes">Routes<a class="headerlink" href="#routes" title="Permanent link">&para;</a></h2>
+<p>The <code>Route</code> allows to expose services through HTTP(S) via a public DNS entry. This is needed to make <code>Services</code> accessible from outside of the cluster.</p>
+<p><em>Check out the <a href="https://docs.openshift.com/container-platform/4.5/rest_api/network_apis/route-route-openshift-io-v1.html">OpenShift</a> Documentation for more information about <code>Routes</code>.</em></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Use <code>ctrl</code> <code>shift</code> + <code>c</code>  and <code>ctrl</code> <code>shift</code> + <code>v</code> for copy/paste content in the <code>vi</code> editor`.</p>
+<p>For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 
+Interface (CLI)' section in oder to complete the exercise.</p>
 </div>
-</li>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Web Console</label><div class="tabbed-content">
+<h3>Create a <code>Service</code></h3>
+<h3>Create a <code>Route</code></h3>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Command Line Interface (CLI)</label><div class="tabbed-content">
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>At the beginning of the exercise make sure that you are in your project context. 
+<div class="highlight"><pre><span></span><code>oc project &lt;project name&gt; 
+</code></pre></div></p>
+</div>
+<h3>Create a <code>Service</code></h3>
+<ol>
+<li>Create a <code>Service</code> for the port <code>8080</code> of the <code>Deployment</code> that we have created in <a href="/deployment">Exercise 2</a>:
+    <div class="highlight"><pre><span></span><code>oc expose deployment &lt;deployment name&gt; --port=&lt;port&gt;
+</code></pre></div></li>
 <li>
-<p>Press <code>ESC</code> to exit the insert mode</p>
+<p>Inspect the <code>Service</code> using the <code>oc get</code> or the <code>oc describe</code> command.
+    <div class="highlight"><pre><span></span><code>oc get service -o wide
+oc describe service &lt;service name&gt;
+</code></pre></div></p>
+<details class="question"><summary>How many endpoints are connected to your <code>Service</code> and why?</summary><p>There are <strong>2 endpoints</strong> connected to your <code>Service</code>, you can figure that out by using the <code>oc describe</code> command.</p>
+<div class="highlight"><pre><span></span><code>[~] $ oc describe service &lt;service name&gt;
+...
+Endpoints: &lt;IP endpoint 1&gt;:8080,&lt;IP endpoint 2&gt;:8080
+...
+</code></pre></div>
+<p>The reason that there are 2 endpoints is that we have 2 replicas configured in the <code>Deployment</code>.
+    Let's compare the IP addresses of the endpoints with the IP address of each <code>Pod</code>. 
+    The IP address of the <code>Pods</code> can be retrieved using the <code>oc get pods -o wide</code> command.
+    As you can see the <code>Service</code> is successfully connected to all <code>Pods</code> of your <code>Deployment</code>.</p>
+</details>
 </li>
-<li>Store and close the file by typing <code>:wq</code> and press <code>ENTER</code></li>
 </ol>
+<h3>Create a <code>Route</code></h3>
+<ol>
+<li>Create a <code>Route</code> in order to make the <code>Service</code> accessible from outside of the cluster.
+    <div class="highlight"><pre><span></span><code>oc create route edge httpd --service=&lt;service name&gt;
+</code></pre></div></li>
+<li>Inspect the new <code>Route</code> using the <code>oc get</code> command.
+    <div class="highlight"><pre><span></span><code>oc get routes
+</code></pre></div></li>
+<li>Try to connect to the <code>HOST</code> of the <code>Route</code> using the browser.</li>
+</ol>
+</div>
+</div>
                 
               
               
@@ -396,7 +429,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../configmap/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../deployment/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -405,11 +438,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Exercise 4 - ConfigMaps
+                Exercise 2 - Deplyoments
               </div>
             </div>
           </a>
         
+        
+          <a href="../configmap/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Exercise 4 - ConfigMaps
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>
