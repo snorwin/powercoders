@@ -333,25 +333,25 @@ Interface (CLI)' section in oder to complete the exercise.</p>
 </code></pre></div>
     (replace <code>John Doe</code> with your actual name - if you are John Doe you can skip this)</p>
 <details class="question"><summary>Try to create the <code>ConfigMap</code> definition file on your own using the template at <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v6h4v2H9v2h4a2 2 0 002-2v-2a2 2 0 00-2-2h-2V9h4V7H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span> and the additional schema information <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 7a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2V9h4V7h-4m0 6h2v2h-2v-2m1-11a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span></summary><p><em>Solution:</em>
-    <div class="highlight"><pre><span></span><code>apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: httpd
-data:
-  index.html: |-
-    &lt;!DOCTYPE html&gt;
-    &lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;John Doe&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;h1&gt;John Doe&lt;/h1&gt;
-        &lt;p&gt;
-        Today I learned how to deploy my own website in the cloud
-        using an Apache HTTP Server (httpd) running on OpenShift.
-        &lt;/p&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;
+    <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
+<span class="nt">data</span><span class="p">:</span>
+  <span class="nt">index.html</span><span class="p">:</span> <span class="p p-Indicator">|-</span>
+    <span class="no">&lt;!DOCTYPE html&gt;</span>
+    <span class="no">&lt;html&gt;</span>
+    <span class="no">&lt;head&gt;</span>
+        <span class="no">&lt;title&gt;John Doe&lt;/title&gt;</span>
+    <span class="no">&lt;/head&gt;</span>
+    <span class="no">&lt;body&gt;</span>
+        <span class="no">&lt;h1&gt;John Doe&lt;/h1&gt;</span>
+        <span class="no">&lt;p&gt;</span>
+        <span class="no">Today I learned how to deploy my own website in the cloud</span>
+        <span class="no">using an Apache HTTP Server (httpd) running on OpenShift.</span>
+        <span class="no">&lt;/p&gt;</span>
+    <span class="no">&lt;/body&gt;</span>
+    <span class="no">&lt;/html&gt;</span>
 </code></pre></div></p>
 </details>
 </li>
