@@ -305,9 +305,53 @@ Interface (CLI)' section in oder to complete the exercise.</p>
 </div>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Web Console</label><div class="tabbed-content">
 <h3>Create a <code>Deployment</code></h3>
-<p>TODO</p>
+<p><img alt="" src="../img/deployment01.png" />
+<img alt="" src="../img/deployment02.png" /></p>
+<ol>
+<li>Switch to the 'Administartor' view using the dropdown menu at <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7v2h2v8h2V7h-4m2-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Navigate to 'Workloads' → 'Deployments' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h4v2h-2a2 2 0 00-2 2v4h6v-2h-4v-2h2a2 2 0 002-2V9a2 2 0 00-2-2H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Switch to the your project using the dropdown menu at <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 15v-1.5a1.5 1.5 0 00-1.5-1.5 1.5 1.5 0 001.5-1.5V9a2 2 0 00-2-2H9v2h4v2h-2v2h2v2H9v2h4a2 2 0 002-2M12 2a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.
+   In each of the exercise make sure that you are in your project context before you are making any changes.</li>
+<li>Press 'Create Deployment' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v6h4v4h2V7h-2v4h-2V7H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Copy the following <code>Deployment</code> definition file to the editor <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v6h4v2H9v2h4a2 2 0 002-2v-2a2 2 0 00-2-2h-2V9h4V7H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>:
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
+  <span class="nt">labels</span><span class="p">:</span>
+    <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">replicas</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+  <span class="nt">selector</span><span class="p">:</span>
+    <span class="nt">matchLabels</span><span class="p">:</span>
+      <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
+  <span class="nt">template</span><span class="p">:</span>
+    <span class="nt">metadata</span><span class="p">:</span>
+      <span class="nt">labels</span><span class="p">:</span>
+        <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
+    <span class="nt">spec</span><span class="p">:</span>
+      <span class="nt">containers</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd-24</span>
+        <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rhscl/httpd-24-rhel7:latest</span>
+</code></pre></div>
+<em>More detailed information about the <code>Deployment</code> definition file can be found in the Tab at <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 7a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2V9h4V7h-4m0 6h2v2h-2v-2m1-11a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</em></li>
+<li>Press 'Create' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 17l4-8V7H9v2h4l-4 8h2m1-15a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+</ol>
 <h3>Inspect a <code>Deployment</code></h3>
-<p>TODO</p>
+<p><img alt="" src="../img/deployment03.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have created the <code>Deployment</code> using the CLI:</p>
+<ol>
+<li>Repeat the steps 1 - 3 of the 'Create a Deployment' task above</li>
+<li>Open the 'Deployment Details' by clicking on the <code>Deployment</code> name in the 'Deployments' overview table. </li>
+</ol>
+</div>
+<ol>
+<li>Check the 'Details' and status of the <code>Pods</code> of a <code>Deployment</code> by moving the mouse over the blue circle <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7v2h2v8h2V7h-4m2-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.
+    The status should be 'Running' after a couple of seconds.</li>
+<li>Additonally check the 'Pods' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h4v2h-2a2 2 0 00-2 2v4h6v-2h-4v-2h2a2 2 0 002-2V9a2 2 0 00-2-2H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span> and the 'Events' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 15v-1.5a1.5 1.5 0 00-1.5-1.5 1.5 1.5 0 001.5-1.5V9a2 2 0 00-2-2H9v2h4v2h-2v2h2v2H9v2h4a2 2 0 002-2M12 2a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span></li>
+</ol>
 <details class="question"><summary>What is the difference between the <code>Pod</code> that was created manually and the one that was created by the <code>Deployment</code>?</summary><p>The <code>Pod</code> created from the <code>Deployment</code> have a random name.</p>
 <p><em>Example:</em>
 <div class="highlight"><pre><span></span><code>httpd-12cf4d11ce-p9w5h
@@ -315,10 +359,15 @@ Interface (CLI)' section in oder to complete the exercise.</p>
 The <code>Deployment</code> adds a random string (e.g. <code>12cf4d11ce</code>) to the deployment name while creating the <code>ReplicaSet</code>.
 The <code>ReplicaSet</code> itself adds  another random string to the each <code>Pod</code> (e.g. <code>p9w5h</code>).</p>
 </details>
-<details class="question"><summary>What happens if you delete a pod uisng <code>oc delete pod &lt;pod name&gt;</code>?</summary><p>The <code>ReplicaSet</code> of the <code>Deployment</code> automatically creates a new <code>Pod</code>. The same would happen if the application in the container of the <code>Pod</code> crashed or terminated.</p>
+<p><img alt="" src="../img/deployment04.png" /></p>
+<details class="question"><summary>What happens if you delete a pod by opening <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v6h4v4h2V7h-2v4h-2V7H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span> in the 'Pods' tab and clicking <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v6h4v2H9v2h4a2 2 0 002-2v-2a2 2 0 00-2-2h-2V9h4V7H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>?</summary><p>The <code>ReplicaSet</code> of the <code>Deployment</code> automatically creates a new <code>Pod</code>. The same would happen if the application in the container of the <code>Pod</code> crashed or terminated. Check the 'Events' again to see what happend.</p>
 </details>
 <h3>Scale a <code>Deployment</code></h3>
-<p>TODO</p>
+<p><img alt="" src="../img/deployment05.png" /></p>
+<ol>
+<li>Scale the <code>Deployment</code> to have another <code>Pod</code> of the application to achieve a redundant and stable setup by clicking on the up arrow at <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7v2h2v8h2V7h-4m2-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Wait until both <code>Pods</code> are running and inspect agin the 'Events' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h4v2h-2a2 2 0 00-2 2v4h6v-2h-4v-2h2a2 2 0 002-2V9a2 2 0 00-2-2H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+</ol>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Command Line Interface (CLI)</label><div class="tabbed-content">
 <div class="admonition important">
@@ -359,7 +408,7 @@ deployment.apps/httpd created
     The <code>Deployment</code> adds a random string (e.g. <code>12cf4d11ce</code>) to the deployment name while creating the <code>ReplicaSet</code>.
     The <code>ReplicaSet</code> itself adds  another random string to the each <code>Pod</code> (e.g. <code>p9w5h</code>).</p>
 </details>
-<details class="question"><summary>What happens if you delete a pod uisng <code>oc delete pod &lt;pod name&gt;</code>?</summary><p>The <code>ReplicaSet</code> of the <code>Deployment</code> automatically creates a new <code>Pod</code>. The same would happen if the application in the container of the <code>Pod</code> crashed or terminated.</p>
+<details class="question"><summary>What happens if you delete a pod using <code>oc delete pod &lt;pod name&gt;</code>?</summary><p>The <code>ReplicaSet</code> of the <code>Deployment</code> automatically creates a new <code>Pod</code>. The same would happen if the application in the container of the <code>Pod</code> crashed or terminated.</p>
 </details>
 </li>
 <li>
