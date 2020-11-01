@@ -45,7 +45,7 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/bui
         ??? question "Try to create the `ConfigMap` definition file on your own using the template at :material-numeric-5-circle: and the additional schema information :material-numeric-6-circle:"
 
             _Solution:_
-            ```
+            ```yaml
             apiVersion: v1
             kind: ConfigMap
             metadata:
