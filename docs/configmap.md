@@ -145,7 +145,7 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/bui
         ```
         oc describe configmap <configmap name>
         ```
-    2. Also check the 'Inspect a ConfigMap' section for the Web Console.
+    2. Also check the `ConfigMap` in the Web Console.
 
     ### Mount a `ConfigMap`
     1. Let's add the `ConfigMap` to the `Pod` template in the `Deployment`.
