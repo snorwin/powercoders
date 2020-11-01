@@ -47,7 +47,7 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
     4. Also check the 'Inspect a Pod' section for the CLI.
     
     ### Delete a `Pod`
-    ![](img/pod03.png)
+    ![](img/pod04.png)
 
     You won't need the `Pod` in the following exercises, therefore clean up your project.
 
