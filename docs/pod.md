@@ -10,23 +10,44 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
 
 === "Web Console"
     ### Create a `Pod`
-    TODO
-    ```yaml
-    apiVersion: v1
-    kind: Pod
-    metadata:
-      name: httpd
-    spec:
-      containers:
-      - name: httpd-24
-        image: rhscl/httpd-24-rhel7:latest
-    ```
+    ![](img/pod01.png)
+    ![](img/pod02.png)
+
+    1. Switch to the 'Administartor' view using the dropdown menu at :material-numeric-1-circle:.
+    2. Navigate to 'Workloads' → 'Pods' :material-numeric-2-circle:.
+    3. Switch to the your project using the dropdown menu at :material-numeric-3-circle:.
+        At the beginning of the exercise make sure that you are in your project context.
+    4. Press 'Create' :material-numeric-4-circle:.
+    5. Copy the following `Pod` definition file to the editor :material-numeric-5-circle::
+        ```yaml
+        apiVersion: v1
+        kind: Pod
+        metadata:
+        name: httpd
+        spec:
+        containers:
+        - name: httpd-24
+            image: rhscl/httpd-24-rhel7:latest
+        ```
+        _More detailed information about the `Pod` definition file  can be found in the Tab at :material-numeric-6-circle:._
+    6. Press 'Create' :material-numeric-7-circle:.
     
     ### Inspect a `Pod`
-    TODO
+    ![](img/pod03.png)
+
+    1. Check the status of the `Pod` at :material-numeric-1-circle:. The status should be 'Running' after a couple of seconds.
+    2. Check the 'Details' :material-numeric-2-circle: of your `Pod`.
+    3. In order to verify if the application in the `Pod` was started succefullt have a quick look into the 'Logs' :material-numeric-3-circle:.
+    4. Also check the 'Inspect a Pod' section for the CLI.
     
     ### Delete a `Pod`
-    TODO
+    ![](img/pod03.png)
+
+    You won't need the `Pod` in the following exercises, therefore clean up your project.
+
+    1. Navigate to the 'Actions' dropdown menu :material-numeric-1-circle:.
+    2. Press 'Delete Pod' :material-numeric-2-circle:.
+
 
 === "Command Line Interface (CLI)"
     !!! important
