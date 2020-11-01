@@ -23,10 +23,10 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
         apiVersion: v1
         kind: Pod
         metadata:
-        name: httpd
+          name: httpd
         spec:
-        containers:
-        - name: httpd-24
+          containers:
+          - name: httpd-24
             image: rhscl/httpd-24-rhel7:latest
         ```
         _More detailed information about the `Pod` definition file  can be found in the Tab at :material-numeric-6-circle:._
