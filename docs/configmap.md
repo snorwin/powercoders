@@ -16,10 +16,92 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/bui
 
 === "Web Console"
     ### Create a `ConfigMap`
+    ![](img/configmap01.png)
+    ![](img/configmap02.png)
 
-    ### Inspect a `ConfigMap`
+    1. Switch to the 'Administartor' view using the dropdown menu at :material-numeric-1-circle:.
+    2. Navigate to 'Workloads' → 'Config Maps' :material-numeric-2-circle:.
+    3. Switch to the your project using the dropdown menu at :material-numeric-3-circle:.
+       In each of the exercise make sure that you are in your project context before you are making any changes.
+    4. Press 'Create Config Map' :material-numeric-4-circle:.
+    5. Create a `ConfigMap` with the `index.html` using the content below:
+        ```html
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>John Doe</title>
+        </head>
+        <body>
+            <h1>John Doe</h1>
+            <p>
+            Today I learned how to deploy my own website in the cloud
+            using an Apache HTTP Server (httpd) running on OpenShift.
+            </p>
+        </body>
+        </html>
+        ```
+        (replace `John Doe` with your actual name - if you are John Doe you can skip this)
+
+        ??? question "Try to create the `ConfigMap` definition file on your own using the template at :material-numeric-5-circle: and the additional schema information :material-numeric-6-circle:"
+
+            _Solution:_
+            ```
+            apiVersion: v1
+            kind: ConfigMap
+            metadata:
+              name: httpd
+            data:
+              index.html: |-
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>John Doe</title>
+                </head>
+                <body>
+                    <h1>John Doe</h1>
+                    <p>
+                    Today I learned how to deploy my own website in the cloud
+                    using an Apache HTTP Server (httpd) running on OpenShift.
+                    </p>
+                </body>
+                </html>
+            ```
+
+    6. Press 'Create' :material-numeric-7-circle:.
+  
+    ![](img/configmap03.png)
 
     ### Mount a `ConfigMap`
+    ![](img/configmap04.png)
+    ![](img/configmap05.png)
+
+    1. Navigate to 'Workloads' → 'Deployments' :material-numeric-1-circle:.
+    2. Open the 'Deployment Details' by clicking on the 'Name' :material-numeric-2-circle:.
+    3. Switch to the 'YAML' tab :material-numeric-3-circle:.
+    4. Add the ==highlighted== parts to the `Deployment` defintion file in the editor :material-numeric-4-circle::
+        ``` hl_lines="9 10 11 12 16 17 18"
+        apiVersion: apps/v1
+        kind: Deployment
+        ...
+        spec:
+          ...
+          template:
+            spec:
+              ...
+              volumes:
+              - name: html
+                configMap:
+                  name: <configmap name> 
+              ...
+              containers:
+              - image: rhscl/httpd-24-rhel7:latest
+                volumeMounts:
+                - name: html
+                  mountPath: /var/www/html
+                ...
+        ```
+    5. Press 'Save' :material-numeric-5-circle:.
+    6. Reload your web site using the URL of the `Route` created in [Exercise 3](/powercoders/networking).
 
 === "Command Line Interface (CLI)"
     !!! important
@@ -30,7 +112,7 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/bui
 
     ### Create a `ConfigMap`
     1. Create a `index.html` file using the [`vi` editor](/powercoders/vieditor/) with the following content:
-        ```
+        ```html
         <!DOCTYPE html>
         <html>
         <head>
@@ -47,9 +129,13 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/bui
         ```
         (replace `John Doe` with your actual name - if you are John Doe you can skip this)
     2. Create a `ConfigMap` with the `index.html`.
-        ```
-        oc create configmap httpd --from-file=index.html
-        ```
+
+        ??? question "Try to figure out how to create a new configmap named `httpd` based on a file using `oc create configmap -h`"
+
+            _Solution:_
+            ```
+            oc create configmap httpd --from-file=index.html
+            ```
     
     ### Inspect a `ConfigMap`
     1. Inspect the created `ConfigMap` using `oc get` and `oc describe`.

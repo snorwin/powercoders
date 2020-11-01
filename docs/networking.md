@@ -84,6 +84,8 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/res
 
         ??? question "How many endpoints are connected to your `Service` and why?"
 
+            _Solution:_ 
+            
             There are **2 endpoints** connected to your `Service`, you can figure that out by using the `oc describe` command.
             
             ```

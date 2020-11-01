@@ -61,6 +61,9 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/app
     2. Additonally check the 'Pods' :material-numeric-2-circle: and the 'Events' :material-numeric-3-circle:
 
     ??? question "What is the difference between the `Pod` that was created manually and the one that was created by the `Deployment`?"
+
+        _Solution:_
+
         The `Pod` created from the `Deployment` have a random name.
 
         _Example:_
@@ -73,6 +76,9 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/app
     ![](img/deployment04.png)
 
     ??? question "What happens if you delete a pod by opening :material-numeric-4-circle: in the 'Pods' tab and clicking :material-numeric-5-circle:?"
+
+        _Solution:_
+        
         The `ReplicaSet` of the `Deployment` automatically creates a new `Pod`. The same would happen if the application in the container of the `Pod` crashed or terminated. Check the 'Events' again to see what happend.
     
     
@@ -119,6 +125,8 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/app
 
         ??? question "What is the difference between the `Pod` that was created manually and the one that was created by the `Deployment`?"
 
+            _Solution:_
+
             The `Pod` created from the `Deployment` have a random name.
 
             _Example:_
@@ -129,6 +137,8 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/app
             The `ReplicaSet` itself adds  another random string to the each `Pod` (e.g. `p9w5h`).
 
         ??? question "What happens if you delete a pod using `oc delete pod <pod name>`?"
+
+            _Solution:_
 
             The `ReplicaSet` of the `Deployment` automatically creates a new `Pod`. The same would happen if the application in the container of the `Pod` crashed or terminated.
 
