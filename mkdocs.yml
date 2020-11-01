@@ -10,7 +10,7 @@ nav:
   - Introduction: index.md
   - Exercise 0 - Projects: project.md
   - Exercise 1 - Pods: pod.md
-  - Exercise 2 - Deplyoments: deployment.md
+  - Exercise 2 - Deployments: deployment.md
   - Exercise 3 - Networking: networking.md
   - Exercise 4 - ConfigMaps: configmap.md
   - Appendix:
