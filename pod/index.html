@@ -303,20 +303,42 @@ Interface (CLI)' section in oder to complete the exercise.</p>
 </div>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Web Console</label><div class="tabbed-content">
 <h3>Create a <code>Pod</code></h3>
-<p>TODO
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<p><img alt="" src="../img/pod01.png" />
+<img alt="" src="../img/pod02.png" /></p>
+<ol>
+<li>Switch to the 'Administartor' view using the dropdown menu at <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7v2h2v8h2V7h-4m2-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Navigate to 'Workloads' → 'Pods' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h4v2h-2a2 2 0 00-2 2v4h6v-2h-4v-2h2a2 2 0 002-2V9a2 2 0 00-2-2H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Switch to the your project using the dropdown menu at <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 15v-1.5a1.5 1.5 0 00-1.5-1.5 1.5 1.5 0 001.5-1.5V9a2 2 0 00-2-2H9v2h4v2h-2v2h2v2H9v2h4a2 2 0 002-2M12 2a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.
+    At the beginning of the exercise make sure that you are in your project context.</li>
+<li>Press 'Create' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v6h4v4h2V7h-2v4h-2V7H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Copy the following <code>Pod</code> definition file to the editor <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v6h4v2H9v2h4a2 2 0 002-2v-2a2 2 0 00-2-2h-2V9h4V7H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>:
+    <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
 <span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
 <span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
+<span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
 <span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">containers</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd-24</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rhscl/httpd-24-rhel7:latest</span>
-</code></pre></div></p>
+<span class="nt">containers</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd-24</span>
+    <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">rhscl/httpd-24-rhel7:latest</span>
+</code></pre></div>
+    <em>More detailed information about the <code>Pod</code> definition file  can be found in the Tab at <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 7a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2V9h4V7h-4m0 6h2v2h-2v-2m1-11a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</em></li>
+<li>Press 'Create' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 17l4-8V7H9v2h4l-4 8h2m1-15a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+</ol>
 <h3>Inspect a <code>Pod</code></h3>
-<p>TODO</p>
+<p><img alt="" src="../img/pod03.png" /></p>
+<ol>
+<li>Check the status of the <code>Pod</code> at <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7v2h2v8h2V7h-4m2-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>. The status should be 'Running' after a couple of seconds.</li>
+<li>Check the 'Details' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h4v2h-2a2 2 0 00-2 2v4h6v-2h-4v-2h2a2 2 0 002-2V9a2 2 0 00-2-2H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span> of your <code>Pod</code>.</li>
+<li>In order to verify if the application in the <code>Pod</code> was started succefullt have a quick look into the 'Logs' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 15v-1.5a1.5 1.5 0 00-1.5-1.5 1.5 1.5 0 001.5-1.5V9a2 2 0 00-2-2H9v2h4v2h-2v2h2v2H9v2h4a2 2 0 002-2M12 2a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Also check the 'Inspect a Pod' section for the CLI.</li>
+</ol>
 <h3>Delete a <code>Pod</code></h3>
-<p>TODO</p>
+<p><img alt="" src="../img/pod03.png" /></p>
+<p>You won't need the <code>Pod</code> in the following exercises, therefore clean up your project.</p>
+<ol>
+<li>Navigate to the 'Actions' dropdown menu <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7v2h2v8h2V7h-4m2-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Press 'Delete Pod' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h4v2h-2a2 2 0 00-2 2v4h6v-2h-4v-2h2a2 2 0 002-2V9a2 2 0 00-2-2H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+</ol>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Command Line Interface (CLI)</label><div class="tabbed-content">
 <div class="admonition important">
