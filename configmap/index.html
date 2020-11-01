@@ -307,8 +307,90 @@ Interface (CLI)' section in oder to complete the exercise.</p>
 </div>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Web Console</label><div class="tabbed-content">
 <h3>Create a <code>ConfigMap</code></h3>
-<h3>Inspect a <code>ConfigMap</code></h3>
+<p><img alt="" src="../img/configmap01.png" />
+<img alt="" src="../img/configmap02.png" /></p>
+<ol>
+<li>Switch to the 'Administartor' view using the dropdown menu at <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7v2h2v8h2V7h-4m2-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Navigate to 'Workloads' → 'Config Maps' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h4v2h-2a2 2 0 00-2 2v4h6v-2h-4v-2h2a2 2 0 002-2V9a2 2 0 00-2-2H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Switch to the your project using the dropdown menu at <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 15v-1.5a1.5 1.5 0 00-1.5-1.5 1.5 1.5 0 001.5-1.5V9a2 2 0 00-2-2H9v2h4v2h-2v2h2v2H9v2h4a2 2 0 002-2M12 2a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.
+   In each of the exercise make sure that you are in your project context before you are making any changes.</li>
+<li>Press 'Create Config Map' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v6h4v4h2V7h-2v4h-2V7H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>
+<p>Create a <code>ConfigMap</code> with the <code>index.html</code> using the content below:
+    <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>John Doe<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>John Doe<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+    Today I learned how to deploy my own website in the cloud
+    using an Apache HTTP Server (httpd) running on OpenShift.
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+    (replace <code>John Doe</code> with your actual name - if you are John Doe you can skip this)</p>
+<details class="question"><summary>Try to create the <code>ConfigMap</code> definition file on your own using the template at <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v6h4v2H9v2h4a2 2 0 002-2v-2a2 2 0 00-2-2h-2V9h4V7H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span> and the additional schema information <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 7a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2V9h4V7h-4m0 6h2v2h-2v-2m1-11a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span></summary><p><em>Solution:</em>
+    <div class="highlight"><pre><span></span><code>apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: httpd
+data:
+  index.html: |-
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;John Doe&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;John Doe&lt;/h1&gt;
+        &lt;p&gt;
+        Today I learned how to deploy my own website in the cloud
+        using an Apache HTTP Server (httpd) running on OpenShift.
+        &lt;/p&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre></div></p>
+</details>
+</li>
+<li>
+<p>Press 'Create' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 17l4-8V7H9v2h4l-4 8h2m1-15a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</p>
+</li>
+</ol>
+<p><img alt="" src="../img/configmap03.png" /></p>
 <h3>Mount a <code>ConfigMap</code></h3>
+<p><img alt="" src="../img/configmap04.png" />
+<img alt="" src="../img/configmap05.png" /></p>
+<ol>
+<li>Navigate to 'Workloads' → 'Deployments' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7v2h2v8h2V7h-4m2-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Open the 'Deployment Details' by clicking on the 'Name' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h4v2h-2a2 2 0 00-2 2v4h6v-2h-4v-2h2a2 2 0 002-2V9a2 2 0 00-2-2H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Switch to the 'YAML' tab <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 15v-1.5a1.5 1.5 0 00-1.5-1.5 1.5 1.5 0 001.5-1.5V9a2 2 0 00-2-2H9v2h4v2h-2v2h2v2H9v2h4a2 2 0 002-2M12 2a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Add the <mark>highlighted</mark> parts to the <code>Deployment</code> defintion file in the editor <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v6h4v4h2V7h-2v4h-2V7H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>:
+    <div class="highlight"><pre><span></span><code>apiVersion: apps/v1
+kind: Deployment
+...
+spec:
+  ...
+  template:
+    spec:
+      ...
+<span class="hll">      volumes:
+</span><span class="hll">      - name: html
+</span><span class="hll">        configMap:
+</span><span class="hll">          name: &lt;configmap name&gt; 
+</span>      ...
+      containers:
+      - image: rhscl/httpd-24-rhel7:latest
+<span class="hll">        volumeMounts:
+</span><span class="hll">        - name: html
+</span><span class="hll">          mountPath: /var/www/html
+</span>        ...
+</code></pre></div></li>
+<li>Press 'Save' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v6h4v2H9v2h4a2 2 0 002-2v-2a2 2 0 00-2-2h-2V9h4V7H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Reload your web site using the URL of the <code>Route</code> created in <a href="/powercoders/networking">Exercise 3</a>.</li>
+</ol>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Command Line Interface (CLI)</label><div class="tabbed-content">
 <div class="admonition important">
@@ -320,24 +402,28 @@ Interface (CLI)' section in oder to complete the exercise.</p>
 <h3>Create a <code>ConfigMap</code></h3>
 <ol>
 <li>Create a <code>index.html</code> file using the <a href="/powercoders/vieditor/"><code>vi</code> editor</a> with the following content:
-    <div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;John Doe&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;John Doe&lt;/h1&gt;
-    &lt;p&gt;
+    <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>John Doe<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>John Doe<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
     Today I learned how to deploy my own website in the cloud
     using an Apache HTTP Server (httpd) running on OpenShift.
-    &lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
     (replace <code>John Doe</code> with your actual name - if you are John Doe you can skip this)</li>
-<li>Create a <code>ConfigMap</code> with the <code>index.html</code>.
+<li>
+<p>Create a <code>ConfigMap</code> with the <code>index.html</code>.</p>
+<details class="question"><summary>Try to figure out how to create a new configmap named <code>httpd</code> based on a file using <code>oc create configmap -h</code></summary><p><em>Solution:</em>
     <div class="highlight"><pre><span></span><code>oc create configmap httpd --from-file=index.html
-</code></pre></div></li>
+</code></pre></div></p>
+</details>
+</li>
 </ol>
 <h3>Inspect a <code>ConfigMap</code></h3>
 <ol>
