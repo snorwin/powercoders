@@ -16,7 +16,7 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
     1. Switch to the 'Administartor' view using the dropdown menu at :material-numeric-1-circle:.
     2. Navigate to 'Workloads' → 'Pods' :material-numeric-2-circle:.
     3. Switch to the your project using the dropdown menu at :material-numeric-3-circle:.
-        At the beginning of the exercise make sure that you are in your project context.
+       In each of the exercise make sure that you are in your project context before you are making any chnages.
     4. Press 'Create' :material-numeric-4-circle:.
     5. Copy the following `Pod` definition file to the editor :material-numeric-5-circle::
         ```yaml
@@ -35,6 +35,12 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
     ### Inspect a `Pod`
     ![](img/pod03.png)
 
+    !!! note
+        If you have created the `Pod` using the CLI:
+
+        1. Repeat the steps 1 - 3 of the 'Create a Pod' task above
+        2. Open the 'Pod Details' by clicking on the `Pod` name in the 'Pods' overview table. 
+
     1. Check the status of the `Pod` at :material-numeric-1-circle:. The status should be 'Running' after a couple of seconds.
     2. Check the 'Details' :material-numeric-2-circle: of your `Pod`.
     3. In order to verify if the application in the `Pod` was started succefullt have a quick look into the 'Logs' :material-numeric-3-circle:.
@@ -45,7 +51,7 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
 
     You won't need the `Pod` in the following exercises, therefore clean up your project.
 
-    1. Navigate to the 'Actions' dropdown menu :material-numeric-1-circle:.
+    1. Navigate to the 'Actions' dropdown menu :material-numeric-1-circle: in the 'Pod Details'.
     2. Press 'Delete Pod' :material-numeric-2-circle:.
 
 
