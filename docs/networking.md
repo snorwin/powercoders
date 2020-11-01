@@ -20,8 +20,47 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/res
 
 === "Web Console"
     ### Create a `Service`
+    ![](img/service01.png)
+    ![](img/service02.png)
+
+    1. Switch to the 'Administartor' view using the dropdown menu at :material-numeric-1-circle:.
+    2. Navigate to 'Networking' → 'Services' :material-numeric-2-circle:.
+    3. Switch to the your project using the dropdown menu at :material-numeric-3-circle:.
+       In each of the exercise make sure that you are in your project context before you are making any changes.
+    4. Press 'Create Service' :material-numeric-4-circle:.
+    5. Let's create a `Service` for the port `8080`. Copy the following `Service` definition file to the editor :material-numeric-5-circle: and replace `<port>` and `<app label>` with the correct value:
+    ```yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: httpd
+    spec:
+      selector:
+        app: <app label>
+      ports:
+        - protocol: TCP
+          port: <port>
+    ```
+    _More detailed information about the `Service` definition file can be found in the Tab at :material-numeric-6-circle:._
+    6. Press 'Create' :material-numeric-7-circle:.
+
+    ![](img/service03.png)
 
     ### Create a `Route`
+    ![](img/route01.png)
+    ![](img/route02.png)
+
+    1. Navigate to 'Networking' → 'Routes' :material-numeric-1-circle:.
+    2. Press 'Create Service' :material-numeric-2-circle:.
+    3. Set the 'Name' :material-numeric-3-circle: to `httpd`.
+    4. Select the 'Service' you have created above in :material-numeric-4-circle:.
+    5. Choose the 'Target Port' `8080` from the dropdown menu :material-numeric-5-circle:.
+    6. Let's secure the `Route` by enabeling the checkbox :material-numeric-6-circle: and selecting 'Edge' for 'TLS Termination' :material-numeric-7-circle:.
+    7. Scroll until the end of the page an press 'Create'.
+    8. Open the link :material-numeric-8-circle: at the 'Route Details' page in order to test the route.
+
+    ![](img/route03.png)
+
 
 === "Command Line Interface (CLI)"
     !!! important
@@ -69,4 +108,4 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/res
         ```
         oc get routes
         ```
-    3. Try to connect to the `https://HOST` of the `Route` using the browser.
+    3. Try to connect to the `https://HOST` of the `Route` using the browser in order to test the route.

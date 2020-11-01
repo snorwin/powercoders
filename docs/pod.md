@@ -16,8 +16,8 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
     1. Switch to the 'Administartor' view using the dropdown menu at :material-numeric-1-circle:.
     2. Navigate to 'Workloads' → 'Pods' :material-numeric-2-circle:.
     3. Switch to the your project using the dropdown menu at :material-numeric-3-circle:.
-       In each of the exercise make sure that you are in your project context before you are making any chnages.
-    4. Press 'Create' :material-numeric-4-circle:.
+       In each of the exercise make sure that you are in your project context before you are making any changes.
+    4. Press 'Create Pod' :material-numeric-4-circle:.
     5. Copy the following `Pod` definition file to the editor :material-numeric-5-circle::
         ```yaml
         apiVersion: v1
@@ -29,7 +29,7 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
           - name: httpd-24
             image: rhscl/httpd-24-rhel7:latest
         ```
-        _More detailed information about the `Pod` definition file  can be found in the Tab at :material-numeric-6-circle:._
+        _More detailed information about the `Pod` definition file can be found in the Tab at :material-numeric-6-circle:._
     6. Press 'Create' :material-numeric-7-circle:.
     
     ### Inspect a `Pod`

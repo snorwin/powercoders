@@ -17,7 +17,7 @@
 4. Modify or add some content
 
     !!! note
-        Use `ctrl` `shift` + `c`  and `ctrl` `shift` + `v` for copy/paste content in the `vi` editor`.
+        Use `Ctrl` `Shift` + `c`  and `Ctrl` `Shift` + `v` for copy/paste content in the `vi` editor`.
 
 5. Press `ESC` to exit the insert mode
 6. Store and close the file by typing `:wq` and press `ENTER`
