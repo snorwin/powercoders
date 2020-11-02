@@ -341,7 +341,7 @@ The <code>Deployment</code> involve a <code>ReplicaSet</code> to manage the <cod
 <p>The <code>ReplicaSet</code> ensures that specified number of <code>Pod</code> replicas are running all the time.
 If a <code>Pod</code> crashes or is deleted the <code>ReplicaSet</code> creates new instances up to the defined number.
 Likewise, if there are more <code>Pods</code> running than desired, it deletes as many as necessary.</p>
-<p><em>Check out the <a href="https://docs.openshift.com/container-platform/4.5/applications/deployments/what-deployments-are.html#deployments-repliasets_what-deployments-are">OpenShift</a> or <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Kubernetes</a> Documentation for more information about <code>Deployemnts</code> and <code>ReplicaSets</code>.</em></p>
+<p><em>Check out the <a href="https://docs.openshift.com/container-platform/4.5/applications/deployments/what-deployments-are.html#deployments-repliasets_what-deployments-are">OpenShift</a> or <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Kubernetes</a> Documentation for more information about <code>Deployments</code> and <code>ReplicaSets</code>.</em></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 
@@ -352,7 +352,7 @@ Interface (CLI)' section in oder to complete the exercise.</p>
 <p><img alt="" src="../img/deployment01.png" />
 <img alt="" src="../img/deployment02.png" /></p>
 <ol>
-<li>Switch to the 'Administartor' view using the dropdown menu at <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7v2h2v8h2V7h-4m2-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
+<li>Switch to the 'Administrator' view using the dropdown menu at <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7v2h2v8h2V7h-4m2-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
 <li>Navigate to 'Workloads' → 'Deployments' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h4v2h-2a2 2 0 00-2 2v4h6v-2h-4v-2h2a2 2 0 002-2V9a2 2 0 00-2-2H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.</li>
 <li>Switch to the your project using the dropdown menu at <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 15v-1.5a1.5 1.5 0 00-1.5-1.5 1.5 1.5 0 001.5-1.5V9a2 2 0 00-2-2H9v2h4v2h-2v2h2v2H9v2h4a2 2 0 002-2M12 2a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.
    In each of the exercise make sure that you are in your project context before you are making any changes.</li>
@@ -394,7 +394,7 @@ Interface (CLI)' section in oder to complete the exercise.</p>
 <ol>
 <li>Check the 'Details' and status of the <code>Pods</code> of a <code>Deployment</code> by moving the mouse over the blue circle <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 7v2h2v8h2V7h-4m2-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span>.
     The status should be 'Running' after a couple of seconds.</li>
-<li>Additonally check the 'Pods' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h4v2h-2a2 2 0 00-2 2v4h6v-2h-4v-2h2a2 2 0 002-2V9a2 2 0 00-2-2H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span> and the 'Events' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 15v-1.5a1.5 1.5 0 00-1.5-1.5 1.5 1.5 0 001.5-1.5V9a2 2 0 00-2-2H9v2h4v2h-2v2h2v2H9v2h4a2 2 0 002-2M12 2a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span></li>
+<li>Additionally check the 'Pods' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h4v2h-2a2 2 0 00-2 2v4h6v-2h-4v-2h2a2 2 0 002-2V9a2 2 0 00-2-2H9m3-5a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span> and the 'Events' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 15v-1.5a1.5 1.5 0 00-1.5-1.5 1.5 1.5 0 001.5-1.5V9a2 2 0 00-2-2H9v2h4v2h-2v2h2v2H9v2h4a2 2 0 002-2M12 2a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 012 12 10 10 0 0112 2z"/></svg></span></li>
 </ol>
 <details class="question"><summary>What is the difference between the <code>Pod</code> that was created manually and the one that was created by the <code>Deployment</code>?</summary><p><em>Solution:</em></p>
 <p>The <code>Pod</code> created from the <code>Deployment</code> have a random name.</p>
