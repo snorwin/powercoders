@@ -1,0 +1,49 @@
+site_name: Powercoders - Introduction to Cloud Computing
+repo_url: https://github.com/snorwin/powercoders
+site_author: Norwin Schnyder
+copyright: Copyright © 2020 Norwin Schnyder - Except where otherwise noted, the content on this site is licensed under a Creative Commons Attribution 4.0 International License.
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/norwin-schnyder/
+    - icon: fontawesome/brands/github
+      link: https://github.com/snorwin/
+
+theme:
+  name: material
+  palette:
+    primary: black
+    accent: indigo
+  favicon: img/favicon-32x32.png
+  logo: img/cloud3.png
+
+edit_uri: ""
+
+nav:
+  - Introduction: index.md
+  - Exercise 0 - Projects: project.md
+  - Exercise 1 - Pods: pod.md
+  - Exercise 2 - Deployments: deployment.md
+  - Exercise 3 - Networking: networking.md
+  - Exercise 4 - ConfigMaps: configmap.md
+  - Appendix:
+    - vi Editor: vieditor.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - pymdownx.smartsymbols
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - toc:
+      toc_depth: 2
+      permalink: true
