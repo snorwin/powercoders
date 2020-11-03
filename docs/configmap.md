@@ -79,20 +79,22 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/bui
     2. Open the 'Deployment Details' by clicking on the 'Name' :material-numeric-2-circle:.
     3. Switch to the 'YAML' tab :material-numeric-3-circle:.
     4. Add the ==highlighted== parts to the `Deployment` defintion file in the editor :material-numeric-4-circle::
-        ``` hl_lines="9 10 11 12 16 17 18"
+        ``` hl_lines="12 13 14 15 18 19 20"
         apiVersion: apps/v1
         kind: Deployment
         ...
         spec:
           ...
           template:
+            metadata:
+              creationTimestamp: null
+              labels:
+                app: httpd
             spec:
-              ...
               volumes:
               - name: html
                 configMap:
                   name: <configmap name> 
-              ...
               containers:
               - image: rhscl/httpd-24-rhel7:latest
                 volumeMounts:
@@ -154,20 +156,22 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/bui
         oc edit deployment <deployment name>
         ```
     2. Add the ==highlighted== parts to the `Deployment`:
-        ``` hl_lines="9 10 11 12 16 17 18"
+        ``` hl_lines="12 13 14 15 18 19 20"
         apiVersion: apps/v1
         kind: Deployment
         ...
         spec:
           ...
           template:
+            metadata:
+              creationTimestamp: null
+              labels:
+                app: httpd
             spec:
-              ...
               volumes:
               - name: html
                 configMap:
                   name: <configmap name> 
-              ...
               containers:
               - image: rhscl/httpd-24-rhel7:latest
                 volumeMounts:

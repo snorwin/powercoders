@@ -30,6 +30,7 @@ nav:
     - vi Editor: vieditor.md
 
 markdown_extensions:
+  - attr_list
   - admonition
   - codehilite
   - footnotes
