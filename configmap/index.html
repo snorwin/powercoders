@@ -414,14 +414,16 @@ kind: Deployment
 spec:
   ...
   template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: httpd
     spec:
-      ...
 <span class="hll">      volumes:
 </span><span class="hll">      - name: html
 </span><span class="hll">        configMap:
 </span><span class="hll">          name: &lt;configmap name&gt; 
-</span>      ...
-      containers:
+</span>      containers:
       - image: rhscl/httpd-24-rhel7:latest
 <span class="hll">        volumeMounts:
 </span><span class="hll">        - name: html
@@ -487,14 +489,16 @@ kind: Deployment
 spec:
   ...
   template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: httpd
     spec:
-      ...
 <span class="hll">      volumes:
 </span><span class="hll">      - name: html
 </span><span class="hll">        configMap:
 </span><span class="hll">          name: &lt;configmap name&gt; 
-</span>      ...
-      containers:
+</span>      containers:
       - image: rhscl/httpd-24-rhel7:latest
 <span class="hll">        volumeMounts:
 </span><span class="hll">        - name: html
