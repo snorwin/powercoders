@@ -51,7 +51,7 @@ _Examples:_ Google Compute Engine (GCE), Amazon Web Services (AWS), Microsoft Az
 Cloud Computing enables organizations to focus on application development because they don't need to take additional efforts to install and maintain the infrastructure (e.g. servers, storage, networks) needed in order to run their application and services.
 Additionally, cloud services abstract the complexity of the technical layers by providing a single API to interact with the underlaying infrastructure which facilitate DevOps practices.
 
-### Scaleability
+### Scalability
 Cloud infrastructure can be provisioned rapidly and on-demand, allowing organizations to react flexibly to changes in the demand for their services. The resources in the cloud, and therefore often the applications running on them, can be scaled up and down in time in order to support fluctuating workloads.
 
 ### Cost Savings
