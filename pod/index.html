@@ -386,7 +386,9 @@ deploy a <code>Pod</code> that runs a single container with the image <code>rhsc
 <p>For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 
 Interface (CLI)' section in oder to complete the exercise.</p>
 </div>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Web Console</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Web Console</label><label for="__tabbed_1_2">Command Line Interface (CLI)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <h3 id="create-a-pod">Create a <code>Pod</code><a class="headerlink" href="#create-a-pod" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../img/pod01.png" />
 <img alt="" src="../img/pod02.png" /></p>
@@ -433,7 +435,7 @@ Interface (CLI)' section in oder to complete the exercise.</p>
 <li>Press 'Delete Pod' <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h4v2h-2a2 2 0 0 0-2 2v4h6v-2h-4v-2h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H9m3-5a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2z"/></svg></span>.</li>
 </ol>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Command Line Interface (CLI)</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>At the beginning of the exercise make sure that you are in your project context. 
@@ -492,6 +494,7 @@ pod/httpd created
     <div class="highlight"><pre><span></span><code>oc delete pod &lt;pod name&gt;
 </code></pre></div></li>
 </ol>
+</div>
 </div>
 </div>
 
@@ -585,7 +588,7 @@ pod/httpd created
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
     
     
       <script src="../assets/javascripts/bundle.e3b2bf44.min.js"></script>
