@@ -51,7 +51,7 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/res
     ![](img/route02.png)
 
     1. Navigate to 'Networking' → 'Routes' :material-numeric-1-circle:.
-    2. Press 'Create Service' :material-numeric-2-circle:.
+    2. Press 'Create Route' :material-numeric-2-circle:.
     3. Set the 'Name' :material-numeric-3-circle: to `httpd`.
     4. Select the 'Service' you have created above in :material-numeric-4-circle:.
     5. Choose the 'Target Port' `8080` from the dropdown menu :material-numeric-5-circle:.
