@@ -8,7 +8,7 @@ There are multiple approaches to achieve this:
 
 `ConfigMap` provides a mechanisms to inject containers with configuration data (entire files or single values) while keeping the containers unchanged. 
 
-_Check out the [OpenShift](https://docs.openshift.com/container-platform/4.5/builds/builds-configmaps.html) or [Kubernetes](https://kubernetes.io/docs/concepts/configuration/configmap/) Documentation for more information about `ConfigMaps`._
+_Check out the [OpenShift](https://docs.openshift.com/container-platform/4.9/applications/config-maps.html) or [Kubernetes](https://kubernetes.io/docs/concepts/configuration/configmap/) Documentation for more information about `ConfigMaps`._
 
 !!! note
     For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 
