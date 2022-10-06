@@ -76,7 +76,7 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
             image: rhscl/httpd-24-rhel7:latest
         ```
        _More detailed information about the `Pod` definition file  can be found in the
-       [OpenShift](https://docs.openshift.com/container-platform/4.5/nodes/pods/nodes-pods-using.html#nodes-pods-using-example_nodes-pods-using-ssy) or [Kubernetes](https://kubernetes.io/docs/concepts/workloads/pods/) Documentation._
+       [OpenShift](https://docs.openshift.com/container-platform/4.9/nodes/pods/nodes-pods-using.html#nodes-pods-using-example_nodes-pods-using-ssy) or [Kubernetes](https://kubernetes.io/docs/concepts/workloads/pods/) Documentation._
        
     2. Create a `Pod` by using the `oc apply` command.
         ```
