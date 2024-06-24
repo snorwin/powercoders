@@ -6,7 +6,7 @@ The `ReplicaSet` ensures that specified number of `Pod` replicas are running all
 If a `Pod` crashes or is deleted the `ReplicaSet` creates new instances up to the defined number.
 Likewise, if there are more `Pods` running than desired, it deletes as many as necessary.
 
-_Check out the [OpenShift](https://docs.openshift.com/container-platform/4.9/applications/deployments/what-deployments-are.html#deployments-repliasets_what-deployments-are) or [Kubernetes](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) Documentation for more information about `Deployments` and `ReplicaSets`._
+_Check out the [OpenShift](https://docs.openshift.com/container-platform/4.15/applications/deployments/what-deployments-are.html#deployments-repliasets_what-deployments-are) or [Kubernetes](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) Documentation for more information about `Deployments` and `ReplicaSets`._
 
 !!! note
     For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 

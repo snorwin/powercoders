@@ -12,7 +12,7 @@ _Check out the [Kubernetes](https://kubernetes.io/docs/concepts/services-network
 ##Routes
 The `Route` allows to expose services through HTTP(S) via a public DNS entry. This is needed to make `Services` accessible from outside of the cluster.
  
-_Check out the [OpenShift](https://docs.openshift.com/container-platform/4.9/rest_api/network_apis/route-route-openshift-io-v1.html) Documentation for more information about `Routes`._
+_Check out the [OpenShift](https://docs.openshift.com/container-platform/4.15/rest_api/network_apis/route-route-openshift-io-v1.html) Documentation for more information about `Routes`._
 
 !!! note
     For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 
