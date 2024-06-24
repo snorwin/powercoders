@@ -1,7 +1,7 @@
 # Powercoders - 'Introduction to Cloud Computing'  Workshop
 
 [![GitHub Action](https://img.shields.io/badge/GitHub-Action-blue)](https://github.com/features/actions)
-[![Build](https://img.shields.io/github/workflow/status/snorwin/powercoders/Publish%20Page?label=build&logo=github)](https://github.com/snorwin/powercoders/actions)
+[![Build](https://img.shields.io/github/actions/workflow/status/snorwin/powercoders/gh-pages.yml?label=build&logo=github)](https://github.com/snorwin/powercoders/actions)
 [![](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 
 
