@@ -2,7 +2,7 @@
 The goal of this exercise is to run our first application, an Apache HTTP Server, in OpenShift.
 For this we use a `Pod` which is the smallest deployable unit of computing that you can create 
 and manage in OpenShift. A `Pod` is a group of one or more containers. In this exercise, we will
-deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7:latest`.
+deploy a `Pod` that runs a single container with the image `ubi9/httpd-24:latest`.
 
 !!! note
     For each exercise you can choose and only have to do either the 'Web Console' or the 'Command Line 
@@ -27,7 +27,7 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
         spec:
           containers:
           - name: httpd-24
-            image: rhscl/httpd-24-rhel7:latest
+            image: ubi9/httpd-24:latest
         ```
         _More detailed information about the `Pod` definition file can be found in the Tab at :material-numeric-6-circle:._
     6. Press 'Create' :material-numeric-7-circle:.
@@ -73,7 +73,7 @@ deploy a `Pod` that runs a single container with the image `rhscl/httpd-24-rhel7
         spec:
           containers:
           - name: httpd-24
-            image: rhscl/httpd-24-rhel7:latest
+            image: ubi9/httpd-24:latest
         ```
        _More detailed information about the `Pod` definition file  can be found in the
        [OpenShift](https://docs.openshift.com/container-platform/4.9/nodes/pods/nodes-pods-using.html#nodes-pods-using-example_nodes-pods-using-ssy) or [Kubernetes](https://kubernetes.io/docs/concepts/workloads/pods/) Documentation._

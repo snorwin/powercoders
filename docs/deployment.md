@@ -42,7 +42,7 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.9/app
         spec:
           containers:
           - name: httpd-24
-            image: rhscl/httpd-24-rhel7:latest
+            image: ubi9/httpd-24:latest
     ```
     _More detailed information about the `Deployment` definition file can be found in the Tab at :material-numeric-6-circle:._
     6. Press 'Create' :material-numeric-7-circle:.
@@ -98,11 +98,11 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.9/app
     ### Create a `Deployment`
     1. Create a `Deployment` of the Apache HTTP Server using the `oc create` command:
         ```
-        oc create deployment httpd --image rhscl/httpd-24-rhel7:latest
+        oc create deployment httpd --image ubi9/httpd-24:latest
         ```
         The output of the command should look this:
         ```
-        [~] $ oc create deployment httpd --image rhscl/httpd-24-rhel7:latest
+        [~] $ oc create deployment httpd --image ubi9/httpd-24:latest
         deployment.apps/httpd created
         ```
 

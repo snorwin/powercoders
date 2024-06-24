@@ -96,7 +96,7 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.9/app
                 configMap:
                   name: <configmap name> 
               containers:
-              - image: rhscl/httpd-24-rhel7:latest
+              - image: ubi9/httpd-24:latest
                 volumeMounts:
                 - name: html
                   mountPath: /var/www/html
@@ -173,7 +173,7 @@ _Check out the [OpenShift](https://docs.openshift.com/container-platform/4.9/app
                 configMap:
                   name: <configmap name> 
               containers:
-              - image: rhscl/httpd-24-rhel7:latest
+              - image: ubi9/httpd-24:latest
                 volumeMounts:
                 - name: html
                   mountPath: /var/www/html
